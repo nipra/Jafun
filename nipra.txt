@@ -1,0 +1,9 @@
+hduser@unlambda:~/ssl-huge/java_stuff$ javac -cp '/home/hduser/ssl-huge/java_classes:/usr/local/hadoop/*' -d ../java_classes/ MaxTemperatureMapper.java 
+hduser@unlambda:~/ssl-huge/java_stuff$ javac -cp '/home/hduser/ssl-huge/java_classes:/usr/local/hadoop/*' -d ../java_classes/ MaxTemperatureReducer.java 
+hduser@unlambda:~/ssl-huge/java_stuff$ javac -cp '/home/hduser/ssl-huge/java_classes:/usr/local/hadoop/*' -d ../java_classes/ MaxTemperature.java 
+
+hduser@unlambda:~$ jar -cvf ssl-huge/java_jars/max-temperature.jar -C ssl-huge/java_classes/ .
+
+hduser@unlambda:~$ hadoop dfs -rmr hdfs_data/hadoop-book_out/max_temperature
+hduser@unlambda:~$ hadoop jar /home/hduser/ssl-huge/java_jars/max-temperature.jar MaxTemperature hdfs_data/hadoop-book/input/ncdc/sample.txt hdfs_data/hadoop-book_out/max_temperature
+

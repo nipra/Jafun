@@ -1,0 +1,2 @@
+hduser@lambda:~$ javac -d ssl-huge/java_classes ssl-huge/java_stuff/FileSystemCat.java 
+hduser@lambda:~$ hadoop FileSystemCat hdfs://localhost:50070/hadoop-book/input/ncdc/sample.txt
