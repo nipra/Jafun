@@ -10,6 +10,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 // (nprabhak@unmac ~/Projects/Java/Jafun/max-temperature-new)$ hadoop jar dist/max-temperature.jar MaxTemperature /Users/nprabhak/hadoop-book/input/ncdc/sample.txt /Users/nprabhak/hadoop-book/output/max-temperature
 // (nprabhak@unmac ~)$ hadoop dfs -cat /Users/nprabhak/hadoop-book/output/max-temperature/part-r-00000
 
+// nipra@lambda:max-temperature-new$ hadoop jar dist/max-temperature.jar MaxTemperature /user/nipra/hadoop-book/input/ncdc/sample.txt /user/nipra/hadoop-book/output/max-temperature
+
+
 public class MaxTemperature {
 
 	public static void main(String[] args) throws Exception {

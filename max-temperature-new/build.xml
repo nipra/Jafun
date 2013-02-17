@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. -->
+Any modifications will be overwritten.
+To include a user specific buildfile here, simply create one in the same
+directory with the processing instruction <?eclipse.ant.import?>
+as the first entry and export the buildfile again. -->
 <project basedir="." default="package" name="max-temperature-new">
-	<property environment="env" />
-	<property name="debuglevel" value="source,lines,vars" />
-	<property name="target" value="1.6" />
-	<property name="source" value="1.6" />
-	<path id="classpath">
-		<fileset dir="/Users/nprabhak/hadoop/hadoop">
-			<include name="*.jar" />
-		</fileset>
-	</path>
+  <property environment="env" />
+  <property name="debuglevel" value="source,lines,vars" />
+  <property name="target" value="1.6" />
+  <property name="source" value="1.6" />
+  <path id="classpath">
+    <fileset dir="/usr/local/hadoop">
+      <include name="*.jar" />
+    </fileset>
+  </path>
 
-	<target name="init">
-		<mkdir dir="build/classes" />
-		<mkdir dir="dist" />
-	</target>
+  <path id="classpath">
+    <fileset dir="/Users/nprabhak/hadoop/hadoop">
+      <include name="*.jar" />
+    </fileset>
+  </path>
 
-	<target name="compile" depends="init" description="Compile Java code">
-		<javac srcdir="src" destdir="build/classes">
-			<classpath refid="classpath" />
-		</javac>
-	</target>
 
-	<target name="package" depends="compile" description="Generate JAR file">
-		<jar destfile="dist/max-temperature.jar" basedir="build/classes" />
-	</target>
+  <target name="init">
+    <mkdir dir="build/classes" />
+    <mkdir dir="dist" />
+  </target>
 
-	<target name="clean" description="Deletes generated directories">
-		<delete dir="build" />
-		<delete dir="dist" />
-	</target>
+  <target name="compile" depends="init" description="Compile Java code">
+    <javac srcdir="src" destdir="build/classes">
+      <classpath refid="classpath" />
+    </javac>
+  </target>
+
+  <target name="package" depends="compile" description="Generate JAR file">
+    <jar destfile="dist/max-temperature.jar" basedir="build/classes" />
+  </target>
+
+  <target name="clean" description="Deletes generated directories">
+    <delete dir="build" />
+    <delete dir="dist" />
+  </target>
 </project>
