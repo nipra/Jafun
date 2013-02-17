@@ -1,4 +1,4 @@
-// cc MaxTemperatureReducer Reducer for maximum temperature example
+//cc MaxTemperatureReducer Reducer for maximum temperature example
 // vv MaxTemperatureReducer
 import java.io.IOException;
 

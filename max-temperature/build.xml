@@ -9,24 +9,33 @@
   </path>
 
   <target name="init">
+
     <mkdir dir="build/classes" />                      
+
     <mkdir dir="dist" />                                       
 
   </target>
 
   <target name="compile" depends="init" description="Compile Java code">
+
     <javac srcdir="src" destdir="build/classes">
       <classpath refid="classpath" />
     </javac>
+
   </target>
 
   <target name="package" depends="compile" description="Generate JAR file">              
+
     <jar destfile="dist/max-temperature.jar" basedir="build/classes"/>
+
   </target>
 
   <target name="clean" description="Deletes generated directories">
+
     <delete dir="build" />
+
     <delete dir="dist" />
+
   </target>
 
 </project>

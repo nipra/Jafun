@@ -1,4 +1,4 @@
-// cc MaxTemperatureMapper Mapper for maximum temperature example
+//cc MaxTemperatureMapper Mapper for maximum temperature example
 // vv MaxTemperatureMapper
 import java.io.IOException;
 
