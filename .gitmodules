@@ -1,0 +1,3 @@
+[submodule "hbase-book"]
+	path = hbase-book
+	url = git://github.com/larsgeorge/hbase-book.git
