@@ -1,1 +1,2 @@
 * hbase-book/ch05/src/main/java/util/HBaseHelper.java
+* (nprabhak@unmac ~/Projects/Java/Jafun/hbase-fun/hbase-book)$ javac -cp '/Users/nprabhak/hadoop/hadoop/*:/Users/nprabhak/hbase_installation/hbase/*' HBaseHelper.java
