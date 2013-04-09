@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_4.xsd"
+    version="2.4">
+
+  <!-- This is descriptive information about the webapp as a whole -->
+  <display-name>Java Examples in a Nutshell</display-name>
+  <description>
+    Servlet and JSP examples from Java Examples in a Nutshell, 3rd
+    edition, including a simple web application to allow users to
+    subscribe and unsubscribe from a mailing list, and to set their mail
+    delivery preferences.
+  </description>
+
+  <!-- Next come servlet tags that map class files to servlet names and -->
+  <!-- also define servlet initialization parameters -->
+  <servlet>
+    <servlet-name>Hello</servlet-name>
+    <servlet-class>je3.servlet.HelloNet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ErrorHandler</servlet-name>
+    <servlet-class>je3.servlet.ErrorHandlerServlet</servlet-class>
+  </servlet>
+
+  <!-- The Counter servlet uses initialization parameters -->
+  <servlet>
+    <servlet-name>Counter</servlet-name>  
+    <servlet-class>je3.servlet.Counter</servlet-class>
+    <init-param>
+      <param-name>countfile</param-name>         <!-- where to save state -->
+      <param-value>/tmp/counts.ser</param-value> <!-- adjust for your system-->
+    </init-param>
+    <init-param>
+      <param-name>saveInterval</param-name>      <!-- how often to save -->
+      <param-value>30000</param-value>           <!-- every 30 seconds -->
+    </init-param>
+  </servlet>
+
+  <!-- The Controller servlet for the ListManager application needs -->
+  <!-- initialization parameters to specify the database to be used. -->
+  <!-- You'll need to set these before you can use the application. -->
+  <servlet>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>je3.servlet.Controller</servlet-class>
+    <init-param> <!-- the JDBC driver class to use -->
+      <param-name>jdbcDriver</param-name>
+      <param-value>com.mysql.jdbc.Driver</param-value>
+    </init-param>
+    <init-param> <!-- The database to connect to -->
+      <param-name>jdbcURL</param-name>
+      <param-value>jdbc:mysql:///test</param-value>
+    </init-param>
+    <init-param> <!-- The username to connect as -->
+      <param-name>jdbcUser</param-name>
+      <param-value></param-value>
+    </init-param>
+    <init-param> <!-- The password to use -->
+      <param-name>jdbcPassword</param-name>
+      <param-value></param-value>
+    </init-param>
+    <init-param> <!-- the database table to use -->
+      <param-name>tablename</param-name>
+      <param-value>testlist</param-value>
+    </init-param>
+    <init-param> <!-- the name of the mailing list -->
+      <param-name>listname</param-name>
+      <param-value>Test Email List</param-value>
+    </init-param>
+  </servlet>
+
+  <!-- Next we map URLs and URL patterns to servlet names -->
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/Hello</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ErrorHandler</servlet-name>
+    <url-pattern>/ErrorHandler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Counter</servlet-name>
+    <url-pattern>/Counter</url-pattern>
+  </servlet-mapping>
+  <!-- Note the wildcard below: any URL ending in .count invokes Counter -->
+  <servlet-mapping> 
+    <servlet-name>Counter</servlet-name>
+    <url-pattern>*.count</url-pattern>
+  </servlet-mapping>
+
+  <!-- These are the different URLs that invoke the ListManager Controller -->
+  <!-- Note that we could also use wildcards here. -->
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/ListManager/</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/ListManager/login.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/ListManager/logout.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/ListManager/edit.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/ListManager/unsubscribe.action</url-pattern>
+  </servlet-mapping>
+
+  <!-- ListManager sessions timeout after 15 minutes of inactivity -->
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+</web-app>

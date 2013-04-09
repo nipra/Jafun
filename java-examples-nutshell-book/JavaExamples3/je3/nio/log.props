@@ -1,0 +1,24 @@
+#
+# A logging properties file for the HttpDownloadManager example
+# See also jre/lib/logging.properties in your Java installation.
+# Use this file by specifying it as the value of a property named
+# java.util.logging.config.file.  For example:
+#
+# java -Djava.util.logging.config.file com.davidflanagan.examples.nio.Http...
+#
+
+# This property specifies the default logging level for log messages
+# send by our program.  Note, however, that if you run the 
+# HttpDownloadManager\$Test class, this property will be overridden by
+# the presence or absence of the -v option.
+com.davidflanagan.examples.nio.HttpDownloadManager.level: INFO
+
+# This property says where output should go.  The default configuration
+# is for it to go to the console.  This property sends log messages to
+# a FileHandler configured below instead
+handlers=java.util.logging.FileHandler
+
+# These properties configure the FileHandler
+# See java.util.logging.FileHandler for other available properties
+java.util.logging.FileHandler.pattern = %h/java%u.log
+java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter
