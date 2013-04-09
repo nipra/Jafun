@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>TestEdit, the Exam Processor from Darwin Open Systems</TITLE>
+</HEAD>
+<BODY BACKGROUND=texture42.gif>
+TestEdit is a very special-purpose editing tool, an
+Exam Processor for editing and formatting 
+multiple-choice examinations. A general word processor
+like WordPerfect or Microsoft Word can do many things, but a word processor
+doesn't understand the structure of your data.
+<H2>No Structure?</H2>
+The notion of structure in data is why we have invented spreadsheets. And
+SGML. And XML. And databases. (And lack of structure is one reason that we 
+have "the Year 2000 crisis" in software).
+It's a recognition that a general purpose word
+processor cannot distinguish between the answer to a question and the text
+of the question, and so it cannot handle the special requirements of formatting,
+printing, and storing the information.
+<H2> The Solution</H2>
+TestEdit was originally written out of the frustration that a Learning Tree
+instructor and author who is also a computer
+programming professional felt when dealing with multiple-choice exams
+stored in a word processor.
+No structure, and no standard processing. 
+Two courses that shared some questions meant each change had to be processed twice (per exam, and there are three exams per course).
+Students occasionally received the version of the exam with the answers marked, because they look too much like the student version.
+<P><IMG SRC="mainwind.gif" HEIGHT=379 WIDTH=601 ALIGN=LEFT>
+<P>As you can see, the main window provides many of the common
+operations. You can jump to any question either by
+typing its number or by dragging a slider, or process questions
+one at a time using the Next/Previous buttons.
+<H2>The Menus</H2>
+<P>But wait, there's more! The File menu lets you XXX
+<P>The Edit menu lets you XXX
+<P>And the View menu lets you see the Statistics...
+<H3>Statistics</H3>
+<IMG SRC="statwind.gif">
+<P>We particularly like the Statistics report, which shows 
+not only how many A, B, C and D answers there are, but also
+how many incomplete questions, questions with no answer, and
+questions with no Chapter Objective. This can be helpful
+in assessing new exams from authors, as well as for monitoring
+ongoing changes.
+<H2>This is a work in progress</H2>
+<P>The version being shown here is a prototype, and lacks some
+important features. That does not mean it is a toy - it is a 
+full-scale program developed using object-oriented programming
+models and techniques.
+<P>The limitations? First, the questions and answers have as yet no
+format capability, to allow keywords in bold, computer input in Courier,
+or whatever. Many of the editing capabilities (such as Find, and
+Cut/Copy/Paste) do not function yet in this version.
+But you can see - from the shaded menu items - 
+the functionality that is planned.
+<P>As well, during the later stages of development, we can work
+with the publications team to add or change functionality.
+<H2>Many Output Formats</H2>
+<P>TestEdit can directly print a draft of the exam. This will not
+get mixed up with what we send the students, because it is clearly
+marked as being a draft. It shows the exam and the correct answers,
+and is an ideal format for proofing by authors, TEs, and others.
+<P>TestEdit can save in its own format (see below). But it can also export
+a file to the web, so that you can run the questions interactively
+for Intranet/Internet delivery.
+The present version, already
+being used in some courses to provide 
+<A HREF="471review.html">review questions that the
+students can answer after each chapter</A>,
+generates simple but adequate HTML.
+A later version will be component-based for better delivery
+with no cheating.
+The program can [soon] also generate Microsoft Rich Text Format documents that 
+MS Word can open directly.
+And, it is planned to add the ability to generate a Sylvan
+Prometric file, so that exams can be sent directly to Sylvan
+without any further manual processing (this capability depends
+on obtaining the proprietary file format that they use).
+Because TestEdit is object-oriented, it is fairly easy to 
+<A HREF="addformat.html">add new file formats</A>.
+<H2>TestEdit Runs on Any Platform!</H2>
+<P>Now you no longer need to worry about authors who work on different
+computing platforms than your central publications department.
+<I>TestEdit is totally portable to any modern computing platform</I>.
+While the standard version is a native MS-Windows 95/98/NT binary,
+the included Java binary can be run on MS-Windows, Macintosh, Solaris,
+Linux, OpenBSD, Novell, or any other Java-enabled computing platform.
+The software installs easily using standard installation tools
+(InstallShield on MS-Windows and InstallAnywhere on Java).
+<H3>The TestEdit File Format</H3>
+<P>The program's native file format is not RTF,
+nor a proprietary binary file like an MS-Word document, but a`
+<A HREF="fileformat.html"> structured text file</A> format. 
+Authors who prefer to work in existing tools
+can prepare input using vi, emacs, perl, WordPerfect (save as Text), or any
+other edtior of their choice, and need only validate using TestEdit
+before sending the files to your publications department.
+<H2>Order Now</H2>
+<P>TestEdit is the answer to all your examination editing problems.
+Buy it now! 
+<A HREF="mailto:http://www.darwinsys.com/">Contact Ian Darwin at 
+Darwin Open Systems, http://www.darwinsys.com/</A>.
+<HR>
+<P><A HREF="index.html">Back to Index</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,7 @@
+s/char \*/String /g
+s/const char \*/String /g
+s/unsigned int /int /g
+s/unsigned long /int /g
+s/unsigned char /char /g
+s/unsigned /int /g
+s/long /int /g

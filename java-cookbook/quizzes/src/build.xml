@@ -1,0 +1,39 @@
+<project name="TestEdit Program and Quizzes Servlet" 
+	default="build" basedir=".">
+
+	<!-- $Id: build.xml,v 1.4 2003/06/02 13:01:12 ian Exp $ -->
+
+	<property file="../../build.properties"/>
+
+	<property name="src" value="."/>
+	<property name="build" value="."/>
+
+	<property name="deploy.dir" value="/home/ian/jboss/jboss/deploy"/>
+
+	<target name="init">
+		<tstamp/> <!-- Create the time stamp -->
+		<mkdir dir="${build}"/> <!-- Create build directory for compile -->
+	</target>
+
+	<target name="compile" depends="init">
+		<mkdir dir="${build}/../WEB-INF/classes"/>
+		<javac srcdir="${src}" destdir="${build}/../WEB-INF/classes"
+			classpath="{build}:${servletapi.jar}"
+			includes="DoTestServlet.java"/>
+		<javac srcdir="${src}" destdir="${build}"
+			classpath="{build}:${servletapi.jar}"
+			excludes="DoTestServlet.java"/>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar jarfile="${build}/${deploy.jar}" basedir="${build}"
+			includes="META-INF/*,com/**">
+		</jar>
+	</target>
+
+	<target name="build" depends="jar"/>
+
+	<target name="deploy" depends="jar">
+	<copy file="${build}/${deploy.jar}" todir="${deploy.dir}"/>
+	</target>
+</project>

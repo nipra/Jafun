@@ -1,0 +1,17 @@
+X 478 A B.1
+T Threads
+
+Q 16 Which statement best describes Java's multitasking facilities?
+R A
+A Threads of control are provided and are easy to use
+B Threads of control are not provided by the Java language
+C Threads of control are provided but are difficult to program
+D Threads of control work only on a computer system with multiple CPUs
+
+Q 38 Which is a good use of threads in Java?
+R D
+A Controlling Java-based animations
+B Implementing timeouts for services and time-limited duration services
+C Building a network server in which each client is allocated a Thread object to control it
+D All of the above
+

@@ -1,0 +1,57 @@
+<HEAD>
+<TITLE>The TestEdit File Format</TITLE>
+</HEAD>
+<BODY BACKGROUND=texture42.gif>
+<H1>The TestEdit File Format</H1>
+<P>The basic file format is lines of plain Unicode (or ASCII) text.
+Most lines begin with a command which is a single capital letter 
+followed by a Unicode space character.
+Null lines are silently ignored.
+Lines beginning with the comments character "#" are allowed on input
+<EM>but will be lost</EM> when the file is saved.
+<H2>File Header</H2>
+<P> Every file must begin with an X line.
+The arguments are the course number, the exam (A, B, or C)
+and the version number.
+The second line must be a T line, with the course title.
+The third line must be an N line, with the maximum number of questions
+for the course. Here is an example of the first three lines:
+<PRE>
+X 471 A D.1
+T Java for Programmers Hands-On
+N 40
+</PRE>
+<H2>Question</H2>
+Each question has a Q line for the question text (which must be first).
+The first field is a question number, which is ignored - it is there
+for reference, but is not required to be in order (you can set them all to
+zero if you're generating the file from another program, for example).
+There is also an O line stating the chapter objective,
+an R line listing the correct answer, and up to four possible
+answers, A, B, C, and D. 
+These lines do not have to be in order.
+There is customarily a blank line after the last one, but this is
+for readability and is optional.
+Here is a sample question:
+<PRE>
+Q 1 What does it all mean?
+O 1
+R C
+A 20?
+B 30?
+C 42?
+D 100?
+
+</PRE><P>And another:<PRE>
+Q 3 Given the code\
+int i = 0;\
+What is the value of i?
+A 0
+B 1
+C 2
+D 3
+R A
+O 2
+</PRE>
+<HR>
+<P><A HREF="index.html">Back to Index</A>.

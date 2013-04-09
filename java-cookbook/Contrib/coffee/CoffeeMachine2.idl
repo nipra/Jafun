@@ -1,0 +1,14 @@
+module CoffeeMachine
+{
+	struct cupStruct {
+		long sizeOfCup;
+		long noOfCups;
+	};
+
+	typedef sequence<cupStruct> cupSeq;
+
+	interface Supply {
+		long dispenseCup();
+		cupSeq getAllCupDetails();
+	};
+};

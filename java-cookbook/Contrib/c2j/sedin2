@@ -1,0 +1,9 @@
+/_body$/d
+s/.*__\~\([A-Za-z0-9_]*\)_.*/c2j: Warning: Could not find body for \1 destructor/
+s/.*__\([^A-Za-z0-9_][A-Za-z0-9_]*\)_.*/c2j: Warning: Overloaded operator \1 not supported in Java/
+s/__java__.* include file /c2j: Warning: not found: /
+/Compilation failed/d
+s/__/::/
+s/_/(/
+/(/s/$/)/
+s/_/,/g

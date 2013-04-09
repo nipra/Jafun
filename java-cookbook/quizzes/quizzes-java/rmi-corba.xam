@@ -1,0 +1,77 @@
+X 472 0 0.0
+T RMI and CORBA
+N 9
+
+Q 0 Which of the following is true of RMI?
+R D
+O 4
+A It is a light-weight distributed object model
+B It only works with Java
+C It is easier to code than CORBA
+D All of the above
+
+Q 0 Who is responsible for generating the stub code in RMI?
+R C
+O 4
+A The developer codes this class by hand
+B This code is a standard part of the JDK
+C The rmic compiler generates this file
+D Nobody; stubs are not used in RMI
+
+Q 0 The standard RMI client and server are built as follows:
+R A 
+O 4
+A Remote interface extends Remote; Server extends UnicastRemoteObject
+B Remote interface implements RmiClient; Server extends UnicastRemoteObject
+C Remote interface implements Remote; Server extends Activable
+D Remote interface extends Remote; Server extends RemoteException
+
+Q 0 The naming code in RMI is in which class?
+O 4
+R C
+A javax.rmi.Naming
+B org.omg.cosNaming
+C java.rmi.Naming
+D java.lang.Naming
+
+Q 0 Java provides a feature called interfaces, heavily used in RMI and CORBA, which:
+R D
+O 0
+A Are light-weight versions of abstract classes, with no non-abstract methods.
+B Allow unrelated classes all to have a given functionality, probable at compile time
+C Allow multiple views on an object, each with its own type name, as shown by instanceof
+D All of the above
+
+Q 0 CORBA clients and server objects can be written in
+O 5
+R D
+A Java only
+B Java, C/C++, Ada, SmallTalk, Fortran
+C Any language at all
+D Any language for which a complete set of bindings has been published
+
+Q 0 CORBA programs can talk to CORBA programs from a different vendor's ORB:
+O 5
+R C
+A Never
+B Always
+C Only if both support IIOP
+D What are you talking about anyway?
+
+Q 0 Given this IDL file: module MyStuff { interface Stuff { long foo() }; };
+O 5
+R C
+A MyStuff will be a package, Stuff an interface, foo a function returning long
+B MyStuff will be a class, Stuff a package, foo a function returning long
+C MyStuff will be a package, Stuff an interface, foo a function returning int
+D None of the above, the IDL file is invalid.
+
+Q 0 Which is a difficulty of debugging CORBA programs?
+O 5
+R D
+A It can be difficult to see System.out messages from the server
+B Tracebacks can be longer than one screen.
+C Client and server must have exactly the same NameComponent
+D All of the above
+
+

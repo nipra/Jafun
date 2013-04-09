@@ -1,0 +1,15 @@
+<!--
+ Document Type Definition for Multiple Choice Exams
+ $Id: exam.dtd,v 1.1 2002/04/05 16:02:40 ian Exp $
+ -->
+<!ELEMENT exam (head,item+)>
+
+<!ELEMENT head (crsnum,title,rev*)>
+<!ELEMENT crsnum (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT rev (#PCDATA)>
+
+<!ELEMENT item (question, answer+)>
+<!ELEMENT question (#PCDATA)>
+<!ELEMENT answer (#PCDATA)>
+<!ATTLIST answer correct (true|false) 'false'>

@@ -1,0 +1,4 @@
+			JOptionPane.showMessageDialog(frame,
+				"setLookAndFeel didn't work: " + e,
+				"UI Failure",
+				JOptionPane.ERROR_MESSAGE);

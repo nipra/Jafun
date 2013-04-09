@@ -1,0 +1,84 @@
+X 472 0 0.0
+T Enterprise Java Beans
+N 10
+
+Q 0 EJB is:
+R B
+O 6
+A A program from PowerTier Associates
+B A middleware component specification from Sun/JavaSoft
+C A client architecture from Edwin Joss Brothers
+D A web client from Microsoft
+
+Q 0 The two types of EJBs are
+O 6
+A Session and Home
+B Entity and Remote
+C Session and Entity
+D Client and Server
+R C
+
+Q 0 To create an EJB you must provide
+O 6
+A 1 interface and 1 class
+B 1 interface and 2 classes
+C 2 interfaces and 1 class
+D 2 interfaces and 2 classes
+R C
+
+Q 0 An EJB Server provides
+O 6
+A Scripting Support
+B Transaction support, load balancing
+C Pooling of instances and connections
+D B and C, but not A
+R D
+
+Q 0 JavaBeans (not EJBs):
+O 6
+A Were originally client side only
+B Support set/get paradigm
+C Useful anywhere
+D All of the above.
+R D
+
+Q 0 Transactions in EJB are:
+O 6
+A Manageable by the Bean
+B Manageable by the Container
+C Both A and B
+D Not supported
+R C
+
+Q 0 A shopping card implemented in EBJ might use:
+O 6
+A A Session bean backed by 1 or more Entity Beans
+B An Entity bean backed by 1 or more Session Beans
+C An Enterprise Bean backed by 1 or more Entity Beans
+D None of the above; use Perl instead
+R A
+
+Q 0 Entity beans
+O 6
+A Are stored in an object database
+B Can not take part in a transaction
+C Relate to persistent data
+D Are an entry-level bean
+R C
+
+Q 0 A drawback of EJBs is:
+O 6
+A Hard to debug, since they can't open files or use native code
+B Hard to diagnose server problems when using PowerTier
+C Hard to write
+D A and B, but not C
+R D
+
+Q 0 Disadvantages of building a car all by yourself are:
+O 6
+A Takes forever; costs a lot
+B You might build the transmission backwards
+C No extended warranty from GM or Ford
+D All of the above
+R D
+ 

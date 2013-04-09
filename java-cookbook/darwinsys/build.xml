@@ -1,0 +1,190 @@
+<project name="com.darwinsys.* package" default="regress" basedir=".">
+
+	<!-- $Id: build.xml,v 1.35 2004/03/14 19:58:25 ian Exp $ -->
+
+	<!-- dependancies -->
+	<property file="../build.properties"/>
+
+	<!-- other properties -->
+	<property name="src" value="src"/>
+	<property name="build" value="build"/>
+
+	<property name="obj.jar" value="darwinsys.jar"/>
+	<property name="src.jar" value="darwinsys-src.jar"/>
+
+	<property name="deploy.dir" value="${user.home}/lib"/>
+
+	<!-- If Ant 1.5 barfs on this, just comment it out -->
+	<condition property="isMacOSX">
+		<and>
+			<os family="mac"/>
+			<os family="unix"/>
+		</and>
+	</condition>
+	<!-- -->
+
+	<target name="init">
+		<tstamp/> <!-- Set time stamp variables in case we need 'em-->
+		<mkdir dir="${build}"/> <!-- Ensure build directory exists -->
+	</target>
+
+	<target name="build" depends="build-core,build-macosx,build-regress"/>
+
+	<target name="build-core" depends="init">
+		<javac destdir="${build}" srcdir="${src}"
+			classpath="${servletapi.jar}:${mail.jar}:${activation.jar}"
+			debug="true" deprecation="true" fork="false">
+			<exclude name="regress/**"/>
+			<exclude name="com/darwinsys/ant/**"/>
+			<exclude name="com/darwinsys/macosui/**"/>
+		</javac>
+	</target>
+
+	<target name="build-macosx" depends="init" if="isMacOSX">
+		<javac destdir="${build}" srcdir="${src}"
+			classpath="${build}"
+			debug="true" deprecation="true" fork="false">
+			<include name="com/darwinsys/macosui/**"/>
+		</javac>
+	</target>
+
+	<target name="build-regress" depends="init">
+		<javac destdir="${build}" srcdir="${src}"
+			classpath="${build}:${junit.jar}"
+			debug="true" deprecation="true" fork="false">
+			<include name="regress/**"/>
+		</javac>
+	</target>
+
+	<target name="dist" depends="jar,src-jar"/>
+
+	<target name="jar" depends="docs,regress">
+		<jar jarfile="${build}/${obj.jar}" 
+			manifest="manifest.stub"
+			basedir="${build}" includes="META-INF/*,com/**/*.class,docs">
+		</jar>
+	</target>
+
+	<target name="src-jar" depends="docs">
+		<jar jarfile="${build}/${src.jar}"
+			manifest="manifest.stub"
+			basedir="." includes="build.xml,src/**">
+		</jar>
+	</target>
+
+	<target name="deploy" depends="jar">
+		<copy file="${build}/${obj.jar}" todir="${deploy.dir}"/>
+	</target>
+
+	<!-- Docs now depends on regress: no point waiting for javadoc
+	 *** if the tests don't run!
+	 -->
+	<target name="docs" depends="regress">
+		<javadoc sourcepath="${src}" destdir="${build}/docs/api"
+			classpath="${build}:${darwinsys.jar}:${mail.jar}"
+			packagenames="com.darwinsys.*"
+			maxmemory="32m" 
+			windowtitle="com.darwinsys.* - Java Cookbook Utilities"
+			Version="true" Author="true" Use="true"
+			Overview="overview.html"
+			>
+			<packageset dir="${src}" defaultexcludes="yes">
+				<include name="com/darwinsys/**" />
+				<exclude name="regress/**"/>
+			</packageset>
+			<bottom><![CDATA[<i>Copyright &#169; 2000-2003 Ian F. Darwin. See <a href="http://javacook.darwinsys.com/license.html">license.html</a> for usage license.</i>]]></bottom>
+		</javadoc>
+		<copy file="html/index.html" todir="${build}/docs"/>
+	</target>
+
+	<target name="install-docs" depends="docs">
+	<!-- jsch scp is not reliable, it always locks up on this scp.
+		<input
+			message="Please enter ssh password:"
+			addproperty="ssh.password"
+			/>
+		<exec executable="clear"/>
+		<scp todir="ian@www.darwinsys.com:/www/javacook/docs"
+			password="${ssh.password}">
+			<fileset dir="${build}/docs"/>
+		</scp>
+	-->
+		<exec executable="/usr/bin/scp">
+			<arg value="-r"/>
+			<arg value="${build}/docs"/>
+			<arg value="ian@www.darwinsys.com:/www/javacook/"/>
+		</exec>
+	</target>
+
+	<!-- Simple Regression Tests -->
+	<!-- In process: re-do ALL with JUnit -->
+	<target name="regress" depends="build">
+		<!-- Tests using JUnit -->
+
+		<taskdef name="junit" 
+			classname="org/apache/tools/ant/taskdefs/optional/junit/JUnitTask"
+			classpath="${ant-junit.jar}:${junit.jar}"/>
+
+		<junit printsummary="yes" fork="no" haltonfailure="yes">
+				<classpath>
+						<pathelement location="${build}"/>
+						<pathelement location="${junit.jar}"/>
+				</classpath>
+				<formatter type="plain"/>
+				<test name="regress.AllTestsNonGUI"/>
+		</junit>
+
+	</target>
+
+	<!-- These regressions require manual intervention, so not default -->
+	<target name="regress.swingui" depends="build">
+		<echo           message="ErrorUtilCatchTest"/>
+		<java className="regress.ErrorUtilCatchTest" classpath="build"
+			fork="yes"/>
+		<echo           message="ErrorUtilTest"/>
+		<java className="regress.ErrorUtilTest" classpath="build"
+			fork="yes"/>
+		<echo           message="ArrayListTableSimple"/>
+		<java className="regress.ArrayListTableSimple" classpath="build"
+			fork="yes"/>
+		<echo           message="LabelTextTest"/>
+		<java className="regress.LabelTextTest" classpath="build"
+			fork="yes"/>
+		<echo           message="SimpleHelpTest"/>
+		<java className="regress.SimpleHelpTest" classpath="build"
+			fork="yes">
+			<arg value="../otherlang/help/index.html"/>
+			</java>
+		<echo           message="WindowCloserTest (deprecated)"/>
+		<java className="regress.WindowCloserTest" classpath="build"
+			fork="yes"/>
+	</target>
+
+	<target name="regress.macosui" depends="build">
+		<echo           message="MacOSUITest"/>
+		<java className="regress.MacOSUITest" classpath="build"
+			fork="yes"/>
+	</target>
+
+	<target name="regress.layout" depends="build">
+		<echo           message="CircleLayoutTest"/>
+		<java className="regress.CircleLayoutTest" classpath="build"
+			fork="yes"/>
+		<echo           message="ColumnLayoutTest"/>
+		<java className="regress.ColumnLayoutTest" classpath="build"
+			fork="yes"/>
+		<echo           message="EntryLayoutTest"/>
+		<java className="regress.EntryLayoutTest" classpath="build"
+			fork="yes"/>
+		<echo           message="RelativeLayoutTest"/>
+		<java className="regress.RelativeLayoutTest" classpath="build"
+			fork="yes"/>
+	</target>
+
+	<target name="clean">
+		<delete file="${fileiotest.dat}"/>
+		<delete file="${fileiotest.dat}.bak"/>
+		<delete dir="build"/>
+		<delete dir="docs"/>
+	</target>
+</project>

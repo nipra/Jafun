@@ -1,0 +1,38 @@
+X 999 A B.1
+T Regular Expressions Quiz
+
+Q 0 Which of the following are regular expression metacharacters:
+A . ? ^ $ \
+B . * % $ \
+C . @ * $ \
+D . ~ * $ \
+R A
+
+Q 0 Which RE will look for "root" at the beginning of a line:
+A root
+B $root
+C ^root
+D 0root
+R C
+
+Q 1 To look for lines containing either "modem" or "printer", use
+R C
+A egrep modem|printer
+B egrep "modem or printer"
+C egrep 'modem|printer'
+D grep 'modem|printer'
+
+Q 0 Which of the following are quantifiers:
+A *
+B \{ \}
+C +
+D All of the above
+R D
+
+Q 0 How could you look for "the", "them", "their", but not "father", "mother"
+A the.*
+B \&lt;the
+C ^the
+D [^famo]the
+R B
+

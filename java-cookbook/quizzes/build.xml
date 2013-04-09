@@ -1,0 +1,13 @@
+<project name="Quizzes" default="build" basedir=".">
+
+	<!-- include global build properties -->
+	<property file="../build.properties"/>
+
+	<property name="build" value="."/>
+
+	<!-- build in subdirectory -->
+	<target name="build">
+		<ant target="compile" dir="src"/>
+	</target>
+
+</project>

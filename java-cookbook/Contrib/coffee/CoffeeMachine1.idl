@@ -1,0 +1,6 @@
+module CoffeeMachine
+{
+	interface Supply {
+		long dispenseCup();
+	};
+};

@@ -1,0 +1,51 @@
+X 570 A B.1
+T Java Server Pages
+
+Q 0 A Java Server Page is
+A A Java program
+B A HTML page with JavaScript embedded
+C A HTML page with Java code embedded
+D A compiled program written in Perl
+R C
+
+Q 0 Which is true:
+A JSP pages get precompiled into servlets and compiled when needed
+B JSP have access to the Servlet API
+C JSP have access to the full Java API
+D All the above
+R D
+
+Q 0 Which of these are valid JSP Server Objects
+A request, response, state, client, application
+B request, response, out, client, application
+C request, response, out, session, application
+D request, response, state, session, application
+R C
+
+Q 0 Which is a valid JSP Scriptlet?
+A &lt;% x = squareof(x) %&gt;
+B &lt;%= x = squareof(x) %&gt;
+C &lt;% "x = squareof(x)" %&gt;
+D &lt;% x = squareof(x); %&gt;
+R D
+
+Q 0 Which is a valid JSP Expression?
+A &lt;%= squareof(x); %&gt;
+B &lt;%= .squareof(x) %&gt;
+C &lt;%= squareof(x) /&gt;
+D &lt;%= y = squareof(x) %&gt;
+R D
+
+Q 0 Which is correct?
+A &lt;jsp:include is dynamic (run time), &lt;@include is static (translate time)
+B &lt;jsp:include is static, &lt;@include is dynamic
+C &lt;jsp:include and &lt;@include are both static
+D &lt;jsp:include and &lt;@include are both dynamic
+R A
+
+Q 0 Session management for JSPs:
+A Has its own special API
+B Is the same as in Applets
+C Is the same as in Servlets
+D Is not available; use a Servlet if you want Session Management
+R C

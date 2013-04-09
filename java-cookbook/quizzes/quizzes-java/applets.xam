@@ -1,0 +1,37 @@
+X 478 A B.1
+T Applets
+
+Q 0 Which statement is true of Java applets?
+A They can run in any Java-enabled World Wide Web browser
+B They can do anything, including removing local files
+C They use the standard GUI components on every platform
+D They can run with or without a Web browser
+R A
+
+Q 0 You can pass additional information to an applet using a PARAM tag, but:
+R B
+A Only one PARAM is allowed for each APPLET tag
+B The applet writer must have written code to handle it
+C You must use an HTML-aware editor to insert the PARAM tag
+D You can provide parameters only by editing the Java source code
+
+Q 0 Which is true of applet security:
+A Applets can normally not load native code
+B Applets are controlled by a security manager
+C Unsigned applets can only connect to servers on the host they were loaded from
+D All of the above
+R D
+
+Q 0 If an Applet uses Swing GUI components:
+A It will not work in any browser.
+B It will probably require use of the Java PlugIn
+C It will work in any browser
+D None of the above
+R B
+
+Q 0 Applets are preferred over a servlet/HTML solution when:
+A When using JDK1.1
+B When the data is on the server
+C A lot of client-side computation is needed, such as realtime graphics
+D All of the above
+R C

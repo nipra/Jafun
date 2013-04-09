@@ -1,0 +1,83 @@
+Testsuite: regress.AllTestsNonGUI
+Tests run: 23, Failures: 0, Errors: 0, Time elapsed: 0.201 sec
+------------- Standard Output ---------------
+** START ** o:h
+Found h
+Found o; Option outfile
+Filename-like arg infile
+** START NEW WAY ** o:h
+Found o; Option outfile
+Found h; (no option)
+Filename-like arg infile
+Expected error(s) found
+** START ** f1o
+Bad option
+Found o
+Filename-like arg infile
+** START NEW WAY ** f1o
+Found o; (no option)
+Found ?; (no option)
+Filename-like arg outfile
+Filename-like arg infile
+Expected error(s) found
+** START ** f1o
+Bad option
+Found o
+Filename-like arg infile
+** START NEW WAY ** f1o
+Found o; (no option)
+Found ?; (no option)
+Filename-like arg outfile
+Filename-like arg infile
+Expected error(s) found
+Properties p should be empty:
+-- listing properties --
+This properties should be have foo=bar:
+-- listing properties --
+foo=bar
+OLD: Old Mc${fred} had a farm, had ${fred}
+EXP: Old McFRED had a farm, had FRED
+GOT: Old McFRED had a farm, had FRED
+Expect: 0B; actual: 0B
+Expect: 999B; actual: 999B
+Expect: 1000B; actual: 1000B
+Expect: 1023B; actual: 1023B
+Expect: 1.0K; actual: 1.0K
+Expect: -1.2K; actual: -1.2K
+Expect: 1.1K; actual: 1.1K
+Expect: 120K; actual: 120K
+Expect: 953M; actual: 953M
+Expect: 931G; actual: 931G
+Format 3 args => 953M
+Caught expected IAE on null input
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+Got expected exception -- OK!
+Caught expected exception java.lang.IllegalArgumentException: @: not letter or digit
+Caught expected exception java.lang.IllegalArgumentException: Pattern may not be null
+Caught expected exception java.lang.IllegalArgumentException: No option letters found in ::
+------------- ---------------- ---------------
+
+Testcase: testGetting took 0.013 sec
+Testcase: testBadArgChar took 0.007 sec
+Testcase: testOldwayGood took 0.004 sec
+Testcase: testOldwayBadCharsGoodArgs took 0.003 sec
+Testcase: testOldwayBadCharsBadArgs took 0.002 sec
+Testcase: testNewWayShort took 0.001 sec
+Testcase: testNewWayLong took 0.001 sec
+Testcase: testConstructorArgs took 0.002 sec
+Testcase: testLeft took 0.004 sec
+Testcase: testCentre took 0 sec
+Testcase: testRight took 0 sec
+Testcase: testReaderToString took 0.062 sec
+Testcase: testCopyFile took 0.003 sec
+Testcase: testSet took 0.038 sec
+Testcase: testIterator took 0 sec
+Testcase: testSetAndGet took 0.014 sec
+Testcase: testSize took 0.001 sec
+Testcase: testToCommaList took 0.003 sec
+Testcase: testIndexOf took 0 sec
+Testcase: testSubst took 0.001 sec
+Testcase: testParseGood took 0.001 sec
+Testcase: testFormatGood took 0.003 sec
+Testcase: testFormatThreeArgs took 0.001 sec

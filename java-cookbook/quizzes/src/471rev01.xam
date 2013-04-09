@@ -1,0 +1,84 @@
+X 471 - A.0
+T Coffee programming for Newbies Hands-On
+N 10
+
+Q 1 Which term best describes Java?
+R A
+O 1
+A Programming language for the Internet and for general applications
+B Network server
+C GUI development package
+D Web browser
+
+Q 2 What type of programs can be written in Java?
+R D
+O -1
+A Applets
+B Servlets
+C Applications (standalone, client, or server)
+D All of the above
+
+Q 3 Which function does the "import" statement perform in Java?
+R C
+O 0
+A Includes compiler options from a file
+B Includes statistical usage information
+C Tells Java in which package to find classes
+D Includes source code of other classes, much as C's #include
+
+Q 4 Which is an advantage of Java over many other common programming languages?
+R D
+O 0
+A It provides array-bounds checking at runtime
+B It can be interpreted on any modern computer system
+C It was designed from the outset to be a secure language
+D All of the above
+
+Q 5 Which is an advantage of modern object-oriented languages such as Java?
+R D
+O 0
+A They run on Microsoft Windows
+B The compilers emit machine code directly
+C They are more efficient than other languages
+D They promote reuse of existing program statements
+
+Q 6 Java solves "the portability problem" by providing:
+R D
+O 0
+A Compilers for all known systems
+B Interpreters for all known systems
+C A compiler that knows how to emit machine code for UNIX and Windows
+D Interpreters for common desktop systems and documenting the file format extensively so that interpreters may be written for other platforms
+
+Q 7 Which are potential issues for Java?
+R D
+O -1
+A Speed
+B JVM variations and vendor features
+C The Learning Curve (time to learn)
+D All of the above
+
+Q 8 What program is used to compile a Java program in the standard Java Development Kit:
+R C
+O -1
+A java
+B javadoc
+C javac
+D jc
+
+Q 9 How many major versions of the Java Development Kit are there as of this point in time (late 1998, including releases in Beta)?
+R @
+O -1
+A 1
+B 2
+C 3
+D 4
+
+Q 10 What does it all mean?
+R C
+O -1
+A Nothing
+B Everything
+C Who knows?
+D Who cares?
+

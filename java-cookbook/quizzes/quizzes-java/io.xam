@@ -1,0 +1,40 @@
+X 478 A B.1
+T Input and Output
+
+Q 0 What are the keywords for error handling?
+A throw, throws, try, catch, finally
+B throw, raise, try, catch, finally
+C raise, raises, try, catch, finally
+D None of the above
+R A
+
+Q 0 FilterStream classes can be used to:
+R D
+A Connect threads 
+B Deal with UNIX-style pipes and filters
+C Convert InputStreams into Readers and vice versa
+D Add functionality such as compression/uncompression almost transparently
+
+Q 0 Which is the simplest way of printing a message to the user's terminal?
+R D
+A printf
+B putmsg
+C writeln
+D System.out.println
+
+Q 7 What do the statements shown below produce when executed in Java?
+<PRE>int you = 42;
+System.out.println("Hello" + you);</PRE>
+A Hello 42
+B Hello42
+R B
+C Hello you
+D Hello world
+
+Q 0 Configurable formatting in Java is handled by:
+A printf
+B java.text
+C java.io
+D All of the above
+R B
+

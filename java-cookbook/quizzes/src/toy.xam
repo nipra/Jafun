@@ -1,0 +1,46 @@
+X 471 A D.1
+T Java for Programmers Hands-On
+N 5
+
+Q 1 What does it all mean?
+R C
+O 1
+A 20?
+B 30?
+C 42?
+D 100?
+
+Q 2 Who cares?
+R D
+O 2
+A Mickey Mouse
+B Mickey Rooney
+C Mickey Kantor
+D None of the above
+
+Q 3 Given the Java code
+int i = 0;
+What is the value of i?
+R A
+O 2
+A 0
+B 1
+C 2
+D 3
+
+Q 4 This is question 4.
+R @
+O -1
+A null
+B null
+C null
+D null
+
+Q 5 This is question five.
+R @
+O -1
+A null
+B null
+C null
+D null
+

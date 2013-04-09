@@ -1,0 +1,48 @@
+$Id: terms.txt,v 1.5 2000/03/17 04:08:55 ian Exp $
+AMD	American Micro Devices: a chip maker that competes with Intel.
+API	Application Programmer Interface: a set of functions that a programmer can use
+ASP	Active Server Pages, a Microsoft technology for imbedding certain commands in HTML pages
+BSD	Berkeley Software Distribution, one of the two major flavors of UNIX. See OpenBSD
+C	A computer programming language invented for writing UNIX in, and very popular in the late 1970's through the 1990's
+C++	An Object-Oriented language heavily based on C; recently displaced by Java
+CGI	Common Gateway Interface; a script or program used to handle a form on a web page
+COBOL	COmmon Business Oriented Language, a programming language used mainly for large-scale financial applications.
+CPU	Central Processing Unit, the "chip" that gives a computer its low-level personality ("machine instruction set") and performs individual instructions (add, multiply, compare...). Common CPUs include Intel/AMD "PC", SPARC, Alpha.
+FTP	File Transfer Protocol, older method of transferring files; can be used interactively or as a URL
+Fortran	A programming language popular from the 1960's to the 1980's, mostly for scientific, engineering and numerical calculation
+Free software	Software that you don't pay for and/or that you can do what you like with
+GNU	GNU's Not UNIX, a self-referential acronym; the name of a long-planned UNIX clone
+GPL	GNU Public License: an anti-property-rights license used on some free software
+HTML	Hyper Text Markup Language, the language used to write most web pages
+HTTP	Hyper Text Transfer Protocol, the standard way of transferring web pages from a server to your computer
+IBM	International Business Machines, a COBOL Mainframe company that set the original standards for the PC
+JDK	Java Development Kit
+JRE	Java Runtime Environment, the runtime-only parts of the JDK
+JSP	Java Server Pages, a technique for imbedding Java code in HTML pages
+Java	A popular object-oriented programming language and environment
+Java API	The large collection of platform-independant APIs that accompanies Java
+JavaScript	A scripting language for embedding commands in Web pages.
+Linux	A clone of UNIX.
+Logo	A language invented for didactic purposes. Popular in education
+MIDI	A standard format for recording music.
+Microsoft	You know who these guys are.
+OpenBSD	A BSD UNIX-like system noted for near-infinite security. Makes a good web server.
+PC	Personal Computer; either an IBM-style PC or any computer primarily usable by one person
+PDF	Portable Document Format, a "shrink wrapped" formatted document
+PHP	A technique for imbedding certain commands in HTML pages
+Pascal	A block-structured procedural language similar to C (slighly better declarations; not very popular now)
+Rlogin	Remote Login (UNIX only): remote terminal-style login
+SDK	Software Development Kit, a package used to develop programs for a particular environment
+SGML	Standard Generalized Markup Language, a standard upon which both HTML and XML are based.
+SPARC	Scalable Processor Architecture, a kind of CPU made by Sun Microsystems
+SSH	Secure SHell, replaces rlogin, telnet and ftp with a more secure protocol
+Sun	Sun Microsystems, inventors of Sun Workstation, SPARCstation, and Java
+Telnet	Old Internet line-mode network login
+UNIX	A portable operating system widely used in academia
+URL	Uniform Resource Locator; the address on the Internet of a resource like a web page
+VBScript	A Microsoft scripting language for HTML pages
+VMS	"Virtual Memory System", an operating system popular on the now-defunct VAX computer line (built by Digital Equipment before Compaq swallowed them up)
+Visual Basic	A Microsoft scripting language and GUI builder
+X, X11	"X Windows", or The X Window System: the windowing system used on all UNIX systems.
+XML	eXtensible Markup Language, a technique for self-describing objects, syntactically similar to HTML
+~	Used at front of a personal URL; from the UNIX abbreviation for "my personal directory"

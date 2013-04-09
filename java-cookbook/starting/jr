@@ -1,0 +1,30 @@
+#!/bin/sh -f
+
+# jr -- javac and run
+
+JAVAC=javac
+if [ -x /usr/local/bin/jikes -o -x /usr/bin/jikes ]; then
+	JAVAC="jikes +E"
+fi
+
+USAGE="$0 [-v] Class [args...]"
+
+function usage {		# give usage message, and exit
+	echo "Usage: $USAGE" 2>&1
+	exit 1
+}
+
+while getopts "s" opt 
+do 
+ 	 case "$opt" in 
+		# s for Sun javac
+		s)	JAVAC=javac;;
+		*)	usage;;
+	esac
+done
+shift `expr $OPTIND - 1`		 # leave just filenames
+
+
+set -x
+
+${JAVAC} -d . $1.java && java $@

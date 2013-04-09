@@ -1,0 +1,38 @@
+<!DOCTYPE exam SYSTEM "exam.dtd">
+
+<exam>
+
+<head>
+<crsnum>471</crsnum>
+<title>Java for Programmers Hands-On</title>
+<rev>A D.1</rev>
+</head>
+
+<item>
+<question>What does it all mean?</question>
+<answer>20?</answer>
+<answer>30?</answer>
+<answer correct="true">42?</answer>
+<answer>100?</answer>
+</item>
+
+<item>
+<question>Who cares?</question>
+<answer>Mickey Mouse</answer>
+<answer>Mickey Rooney</answer>
+<answer>Mickey Kantor</answer>
+<answer correct="true">None of the above</answer>
+</item>
+
+<item>
+<question>Given this Java code:
+int i = 0;
+What is the value of i?
+</question>
+<answer correct="true">0</answer>
+<answer>1</answer>
+<answer>2</answer>
+<answer>3</answer>
+</item>
+
+</exam>

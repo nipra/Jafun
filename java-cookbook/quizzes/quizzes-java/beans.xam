@@ -1,0 +1,19 @@
+X 478 A B.1
+T JavaBeans
+
+Q 12 JavaBeans are:
+R D
+A The same as applets
+B Standalone applications
+C The same as components
+D Reusable software components useful in a GUI builder
+
+Q 36 What function does the BeanInfo file play in a JavaBean component?
+R D
+A Tells the URL of the vendor of the Bean
+B Tells the system that the component is a Bean
+C Tells whether the Bean can also be used as an applet
+D Can provide icons and a list of methods, hiding all the uninteresting methods
+
+
+

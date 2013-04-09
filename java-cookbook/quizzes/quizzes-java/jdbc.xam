@@ -1,0 +1,37 @@
+X 478 A B.1
+T Java Database Connectivity
+
+Q 0 What package contains the basic JDBC functionality?
+A java.jdbc
+B javax.db
+C java.sql
+D java.rmi
+R C
+
+Q 0 Which of the following would load the driver for the ODBC bridge
+A System.loadlibrary("jdbc.odbc");
+B Class.forName("com.sun.jdbc.odbc.odbcjdbcdriver");
+R B
+C load.class("com.sun.jdbc.odbc.odbcjdbcdriver");
+D new JDBCDriver("com.sun.jdbc.odbc.odbcjdbcdriver");
+
+Q 0 From whom can you get a database driver to use JDBC:
+A Database Vendor
+B Third Party
+C Write your own
+D All of the above
+R D
+
+Q 0 How do you get a Statement object?
+A new Statement();
+B myConnection.createStatement()
+C ConnectionManager.createStatement()
+D No need; all its methods are static
+R B
+
+Q 0 Which of these is the most correct way of writing a query:
+A Statement.executeQuery("...");
+B myStmt.executeQuery("...");
+C DriverManager.executeQuery("...");
+D ResultSet rs = myStmt.executeQuery("...");
+R D

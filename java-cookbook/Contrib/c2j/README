@@ -1,0 +1,99 @@
+#############################################################################
+
+c2j,  96/04/04,  Chris Laffra
+
+Copyright (c) 1995-1996 Morgan Stanley & Co., Inc. All Rights Reserved.
+
+Permission to use, copy, modify, and distribute this software
+and its documentation for NON-COMMERCIAL purposes and without
+fee is hereby granted provided that this copyright notice
+appears in all copies. Please contact email: laffra@ms.com
+for further copyright and licensing information.
+
+MORGAN STANLEY MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY
+OF THIS SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, OR NON-INFRINGEMENT. MORGAN STANLEY SHALL NOT BE LIABLE
+FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
+DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+
+#############################################################################
+
+c2j is a C++ to Java translator that translates C++ code to Java code.
+The input must consist of:
+
+   - one .H file, containing one or more C++ class definitions.
+   - one .C file, containing all method bodies referenced in the .H file.
+
+c2j is basically a shell-script that calls sed, a C++-to-Java translator,
+and the C pre-processor to do all the weaving of moving methods into one
+Java class definition.
+
+This parser currently uses a shell script and a Unix utility called "sed".
+When you have access to Unix utilities on a Windows PC (like the MKS
+toolkit), the parser could also be used. 
+On Unix, and Windows NT/95 use the following command to make the parser:
+
+	make
+
+
+Different problems that are tackled by this parser:
+
+   - C++ can have a header file with a class declaration and a member
+     function given in another file (typically a .C or .cpp file),
+     Java has all the methods "inlined" in the class definition. 
+
+   - Data types are incompatible (unsigned versus int, for instance)
+
+   - Pointer references (->) need to be translated into refs (.)
+
+   - Access (public,protected,private) is done by region in C++, and
+     is per method in Java.
+
+   - Print statements to cerr and cout, which are to be translated into 
+     calls to System.out.print, and System.err.print.
+
+   - Statements with "delete object;" need to be translated into
+     "object = null;" to render a similar effect. Note that these 
+     assignments are not necessary at all in a destructor, as we will
+     lose the reference to the object automatically.
+
+   - Overloaded operators in a class definition are meaningless in Java.
+     
+   - C++ has multiple inheritance. Java has single inheritance and
+     interfaces. In the case of multiple inheritance, we need to make
+     a decision.
+
+Still to be done:
+
+   - Variable declarations on the stack are not recognized and handled.
+
+   - Overloaded operators in the code. 
+
+   - Templates.
+
+   - Global variables are collected and put into the first class found
+     in the .H file. Something goes wrong during collection or writing,
+     and this class might not be the right location after all.
+
+   - Sometimes the parser has problems with method parameters (especially
+     with constructor). Keep the .H and .C file handy...
+
+   - Documentation (no time...)
+
+It translates roughly about 85-95 percent of the code correctly. It saves
+me a lot of editing time (inlining all methods, translating simple types,
+removing &s everywhere, changing -> into ., etc. 
+Just run it and see what it does for you...
+
+We have decided to put this parser in the public domain. Use it at your
+own risk, and if you make any changes (especially improvements), tell us!
+
+We hope that this utility is useful for you and the rest of the Java
+community.
+
+Chris Laffra
+-------------------------------------------------------------------
+Morgan Stanley, 750 Seventh Avenue (between 49 & 50), NYC, NY 10019
+Email: laffra@ms.com,   Tel: (212) 762 2223,    Fax: (212) 762 0520
+-------------------------------------------------------------------

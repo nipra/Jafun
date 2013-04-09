@@ -1,0 +1,41 @@
+X 478 A B.1
+T Web Basics
+
+Q 1 A Web Application is one:
+R C
+A Written in Java
+B Written in HTML
+C Written using HTTP
+D Written in Perl
+
+Q 0 Which statement is correct:
+A A POST method encodes data in the URL, a GET in the input stream
+B A GET method encodes data in the URL, a POST in the input stream
+C A PUT method encodes data in the URL, a GET in the input stream
+D A SEND method encodes data in the URL, a POST in the input stream
+O 2
+R B
+
+Q 0 Which of the following HTML tags are parts of an HTML table:
+R D
+O 1
+A TABLE, TR, TD, TI
+B TABLE, ROW, DATA, CELL
+C TABLE, THEAD, TCELL
+D TABLE, TR, TH, TD
+
+Q 0 Which of these is true of HTTP:
+R D
+O 2
+A HTTP is a stateless protocol
+B Both the Browser and the Server can optionally send headers
+C Both the Browser and the Server must begin sending a one-line message
+D All of the above
+
+Q 0 Which "method" is used for a URL referred to in a hyperlink ('A' tag)?
+A PUT
+B POST
+C GET
+R C
+D READ
+

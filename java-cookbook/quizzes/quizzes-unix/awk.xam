@@ -1,0 +1,66 @@
+X 999 A B.1
+T Awk Basics Quiz
+
+Q 0 Awk is:
+R D
+A A simple pattern-matching language
+B A complete scripting solution
+C Good for one-liners and much more
+D All of the above
+
+Q 0 Which is a valid first line for an awk script that is to be run as a UNIX command:
+A $# /bin/awk
+B $! /bin/awk -f
+C #! /bin/awk -f
+D #! /bin/awk -g
+R C
+
+Q 0 An awk script consists of patterns and actions; if a pattern has no action, it will:
+A Apply to every input line
+B Print every line that matches this pattern
+C Print every line of input
+D Quit awk with an error message.
+R B
+
+Q 0 To print the last field on each line:
+A print $NF
+B print $0
+C print $N
+D print $(NF)
+R A
+
+Q 0 To print a left-justified string and a floating point number in awk, use:
+A print "$20s$f8.2", string, number
+B print "%+20s%f8.2", string, number
+C print "%-20s%f8.2", string, number
+D print "%20-s%f8.2", string, number
+R C
+
+Q 0 Which of these is the correct pattern to test if the third field of an input line is the string "unix lives":
+A $1 == "unix lives"
+B $3 = "unix lives"
+C $3 ~ "unix lives"
+D $3 == "unix lives"
+R D
+
+Q 0 If more than one pattern matches a given line: awk will
+A Run the first one that matches
+B Run all that match
+C Run the last one that matches
+D None; it is an error to match more than one pattern
+R B
+
+Q 0 A user-defined variable can contain
+A string values
+B integer values
+C floating point values
+D Any one of the above
+R D
+
+Q 0 Which is a valid command to print all the lines that do not contain "unix"
+A awk '{print "unix" }'
+B awk '$0 !~ /unix/ { print }'
+R B
+C awk '$0 ~! /unix/ { print }'
+D awk '$0 != /unix/ { print }'
+

@@ -1,0 +1,34 @@
+X 570 0 0.0
+T Enterprise Java Beans
+N 10
+
+Q 0 EJB is:
+R B
+O 6
+A A program from PowerTier Associates
+B A middleware component specification from Sun/JavaSoft
+C A client architecture from Edwin Joss Brothers
+D A web client from Microsoft
+
+Q 0 An EJB Server provides
+O 6
+A Scripting Support
+B Transaction support, load balancing
+C Pooling of instances and connections
+D B and C, but not A
+R D
+
+Q 0 To use an EJB you must:
+A Instantiate it with "new"
+B lookup() and create() it
+C find() it and new it
+D Just use the class name
+R B
+
+Q 0 Various forms of distributed object technologies for Java include
+A RPC, MJB and COBRA
+B RMI, DCom and JSP
+C RMI, CORBA and EJB
+R C
+D None of the above
+

@@ -1,0 +1,45 @@
+X 570 A B.1
+T Web - State, Sessions, Cookies
+
+Q 0 A cookie is
+A A Java program
+B A small chunk of text stored by the browser for the server
+C A small chunk of text stored by the server for the browser
+D A small chunk of binary data stored by the browser for the server
+R B
+
+Q 0 Which statement is correct:
+A A session is a series of interactions between a user and a server
+B A session is a series of interactions between a browser and a server
+C A session is a series of interactions between a desktop machine and a server
+D None of the above; sessions do not apply to Java
+R B
+
+Q 0 How do cookies get transmitted?
+A Transmitted as part of the HTML data
+B Sent directly over a TCP socket
+C Transmitted in the HTTP headers
+D Sent via UDP packets
+R C
+
+Q 0 Which of these is true:
+O 2
+A You must never use encodeURL on any generated link if cookies are enabled
+B You must either say "Cookes must be enabled", or use encodeURL on every generated link
+C You must always use encodeURL on every generated link
+D All of the above
+R B
+
+Q 0 How do you get the user's session object?
+A response.getSession()
+B request.getSession()
+C application.getSession()
+D out.getSession()
+R B
+
+Q 0 Which of these would get a BookCatalog object from the HTTP session?
+A BookCatalog bc = session.getAttribute("mybook");
+B BookCatalog bc = (BookCatalog) resquest.getAttribute("mybook");
+C BookCatalog bc = session.getAttribute("mybook", BookCatalog);
+D BookCatalog bc = (BookCatalog) session.getAttribute("mybook");
+R D

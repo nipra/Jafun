@@ -1,0 +1,30 @@
+X 570 A D.1
+T Java Servlets (see also: Web Basics)
+
+Q 0 Which of these is true of a servlet:
+A Its init and destroy methods are only called once
+B Its service method will be called as often as necessary
+C It will be loaded by the browser
+D A and B, but not C
+R D
+
+Q 0 If you type a URL string into the text field of a browser, which method does it use?
+A SEND
+B GET
+C POST
+D PUT
+R B
+
+Q 0 Which of these is true of the "out" object in our example Servlets:
+A It is a PrintWriter
+B You can get it with response.getWriter() in the current Servlet API 1.1
+C If you write any methods that use it, you must pass this as an argument
+D All of the above
+R D
+
+Q 0 Which is the correct signature for a service() method?
+A service(Request, Response);
+B service(ServletRequest, ServletResponse);
+C service(HttpServletRequest, HttpServletResponse);
+D public void service(HttpServletRequest, HttpServletResponse) throws IOException, ServletException;
+R D

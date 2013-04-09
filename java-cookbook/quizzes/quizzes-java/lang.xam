@@ -1,0 +1,182 @@
+X 478 A B.1
+T Java Basics
+
+Q 3 Which function does the "import" statement perform in Java?
+R C
+A Includes compiler options from a file
+B Includes statistical usage information
+C Tells Java in which package to find classes
+D Includes source code of other classes, much as C's #include
+
+Q 4 Which is an advantage of Java over many other common programming languages?
+R D
+A It provides array-bounds checking at runtime
+B It can be interpreted on any modern computer system
+C It was designed from the outset to be a secure language
+D All of the above
+
+Q 5 Which is an advantage of modern object-oriented languages such as Java?
+R D
+A They run on Microsoft Windows
+B The compilers emit machine code directly
+C They are more efficient than other languages
+D They promote reuse of existing program statements
+
+Q 6 Java solves "the portability problem" by providing:
+R D
+A Compilers for all known systems
+B Interpreters for all known systems
+C A compiler that knows how to emit machine code for UNIX and Windows
+D Interpreters for common desktop systems and documenting the file format extensively so that interpreters may be written for other platforms
+
+Q 8 What program is used to compile a Java program in the standard Java Development Kit:
+R C
+A java
+B javadoc
+C javac
+D jikes
+
+Q 3 Given this Java code:
+MyData d1 = new MyData(12345), d2;
+which is a way of copying an object d1 under the name d2?
+R C
+A d2 = d1;
+B d1 = d2;
+C d2 = d1.clone();
+D d2 = copyOf(d1);
+
+Q 6 Which operation is used to request allocation of memory in a Java program?
+R A
+A new()
+B malloc()
+C alloca()
+D allocate()
+
+Q 19 Java provides a feature called interfaces, which:
+A Provide multiple inheritance of specification
+B Allow multiple views on an object, each with its own type name, as shown by instanceof
+C Can Add functionality selectively at various points in a hierarchy
+D All of the above
+R D
+
+Q 35 If a class or method is not declared either public or private, it is accessible:
+R B
+A By any method in any class
+B Only by methods in that class or the same package
+C Only by methods of a superclass
+D Only by methods in the same package
+
+Q 28 The term "method overloading" means that more than one:
+R C
+A Class has the same name but different argument lists
+B Method has the same argument list but different names
+C Method has the same name but different argument lists
+D Reference variable has the same name but different argument lists
+
+Q 29 To overload an operator (the way that String overloads + to mean concatenation), use the:
+R D
+A Operator by itself as a method name in your class
+B Word "operator" and the operator itself to make a method name in your class
+C Word "overload" and the operator itself to make a method name in your class
+D None of the above; you cannot do this in Java
+
+Q 30 In the Java statement:
+System.out.println("The answer is " + 42);
+which is true?
+R D
+A The statement as shown is invalid
+B The value 42 must be cast to String with an explicit cast
+C The value 42 must be converted by the programmer using Integer.toString()
+D The variable 42 is converted to String, concatenated with "The answer is ", and printed
+
+Q 31 Which are valid flow-control statements in Java?
+R C
+A if, while, do, for, switch, jump, retry, return
+B if, while, do, for, switch, jump, continue, return
+C if, while, do, for, switch, break, continue, return
+D if, while, do, repeat, switch, break, continue, return
+
+Q 32 Which is a correct declaration for an array of 10 integers?
+R D
+A int ia[] = new int(9);
+B int ia[] = new int(10);
+C int ia   = new int(10);
+D int ia[] = new int[10];
+
+Q 33 Which is a correct method of accessing all the elements of a 10-element array?
+R A
+A for (int i=0; i< thisarray.length; i++) process(thisarray[i])
+B for (int i=1; i<=thisarray.length; i++) process(thisarray[i])
+C for (int i=0; i<thisarray->length; i++) process(thisarray[i])
+D for (int i=0; i<thisarray.length(); i++) process(thisarray[i])
+
+Q 34 Which keyword is used to define a new structured object type in Java?
+R A
+A class
+B union
+C object
+D struct
+
+Q 17 Java is more likely to be secure than a language such as C because Java:
+R D
+A Does not provide pointer arithmetic
+B Was designed from the outset to provide a secure environment
+C Provides easy access to all the facilities of the underlying operating system
+D A and B only
+
+Q 18 Which is a potential disadvantage of Java?
+R D
+A It depends heavily on HTML
+B It does not provide animation
+C It does not allow you to generate HTML
+D It may be more difficult to learn than non-object-oriented languages
+
+Q 21 Java's error-handling capabilities:
+R B
+A Allow you to pass back a return code when a function fails
+B Allow you to try a statement and catch any errors that occur
+C Expect the programmer to handle all error conditions, as in C
+D Always terminate your program when a runtime error is detected
+
+Q 22 Which is true about identifier names in Java?
+R B
+A Java identifiers are in ASCII and can be of any length
+B Java identifiers are in Unicode and can be of any length
+C Java identifiers are in ASCII and are limited to 32 characters
+D Java identifiers are in Unicode and are limited to 32 characters
+
+Q 23 Which can be used to provide comments in a Java program?
+R C
+A /* ... */, REM, or //
+B /** ... */, //, or /* ... */, the last being treated specially by JavaDoc
+C /* ... */, //, or /** ... */, the last being treated specially by JavaDoc
+D None of the above; Java does not allow comments because its code is so readable
+
+Q 24 To create objects of a given "structured type," or class, in Java:
+R D
+A Use new with the name of the class
+B Use malloc() and assign the result to a reference variable
+C Assign to a variable of the given class; Java will allocate storage for it
+D Use new with the class constructor that best matches the information you have
+
+Q 25 Which is a valid call to method foo in object bar?
+R B
+A bar()foo;
+B bar.foo();
+C foo().bar;
+D foo.bar();
+
+Q 26 Arrays and objects are called reference variables in Java because they:
+R D
+A Are easy to reference
+B Can be referenced only by name, not by address
+C Are passed by copy value to methods that use them
+D Are passed by copy reference to methods that use them
+
+Q 10 What does it all mean?
+R C
+A Nothing
+B Everything
+C Who knows?
+D Who cares?
+

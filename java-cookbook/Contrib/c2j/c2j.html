@@ -1,0 +1,114 @@
+
+<title>C2J, a C++ to Java translator</title>
+<h1>C2J, a C++ to Java translator</h1>
+
+c2j is a C++ to Java translator that translates C++ code to Java code.
+The parser is written in C++, because I wrote it before I ever heard of Java...
+The input to c2j must consist of:
+<p>
+
+<ul>
+   <li> one .H file, containing one or more C++ class definitions.
+   <li> one .C file, containing all method bodies referenced in the .H file.
+</ul>
+
+<p>
+c2j is basically a shell-script that calls sed, a C++-to-Java translator,
+and the C pre-processor to do all the weaving of moving methods into one
+Java class definition.
+<p>
+This parser currently uses a shell script and a Unix utility called "sed".
+When you have access to Unix utilities on a Windows PC (like the MKS
+toolkit), the parser could also be used. 
+<p>
+On UNIX, and Win95/WinNT use the following command to make the parser:
+<pre>
+	make
+</pre>
+<p>
+Different problems that are tackled by this parser:
+
+<ul>
+<p>
+<li> C++ can have a header file with a class declaration and a member
+     function given in another file (typically a .C or .cpp file),
+     Java has all the methods "inlined" in the class definition.
+
+<p>
+<li> Data types are incompatible (unsigned versus int, for instance)
+<p>
+
+<li> Pointer references (->) need to be translated into refs (.)
+<p>
+
+<li> Access (public,protected,private) is done by region in C++, and
+     is per method in Java.
+<p>
+
+<li> Print statements to cerr and cout, which are to be translated into
+     calls to System.out.print, and System.err.print.
+<p>
+
+<li> Statements with "delete object;" need to be translated into
+     "object = null;" to render a similar effect. Note that these
+     assignments are not necessary at all in a destructor, as we will
+     lose the reference to the object automatically.
+<p>
+
+<li> Overloaded operators in a class definition are meaningless in Java.
+<p>
+
+<li> C++ has multiple inheritance. Java has single inheritance and
+     interfaces. In the case of multiple inheritance, we need to make
+     a decision.
+<p>
+</ul>
+
+<ul>
+Still to be done:
+<p>
+
+<li> Variable declarations on the stack are not recognized and handled.
+<p>
+
+<li> Overloaded operators in the code.
+<p>
+<li> pointer artithmetic.
+<p>
+
+<li> Templates.
+<p>
+
+<li> Global variables are collected and put into the first class found
+     in the .H file. Something goes wrong during collection or writing,
+     and this class might not be the right location after all.
+<p>
+
+<li> Sometimes the parser has problems with method parameters
+     (especially with constructors). Keep the .H and .C file handy...
+<p>
+
+<li> Documentation (no time...)
+<p>
+</ul>
+
+
+c2j translates roughly about 85-95 percent of our code correctly. It saves
+me a lot of editing time (inlining all methods, translating simple types,
+removing &'s everywhere, changing -> into ., etc.
+Just run it and see what it does for you...
+<p>
+A beta version of c2j can be <a href="c2j.zip">downloaded here</a> for free.
+<p>
+We have decided to put this parser in the public domain. Use it at your
+own risk, and if you make any changes (especially improvements), tell us!
+We hope that this utility is useful for you and the rest of the C++/Java
+community.
+<p>
+
+Chris Laffra
+<br>
+-------------------------------------------------------------------<br>
+Morgan Stanley, 750 Seventh Avenue (between 49 & 50), NYC, NY 10019<br>
+Email: laffra@ms.com,   Tel: (212) 762 2223,    Fax: (212) 762 0520<br>
+-------------------------------------------------------------------<br>

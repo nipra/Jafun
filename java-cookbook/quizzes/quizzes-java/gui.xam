@@ -1,0 +1,66 @@
+X 478 A B.1
+T GUI
+
+Q 0 Which of these is the ancestor of every visible thing in a Java GUI:
+A Container
+B Component
+C Continental
+D Canvas
+R B
+
+Q 0 Which of these properties can you get/set on a component:
+A color, font, style
+B color, font, cursor, focus, visible
+C color, Buttons, Canvas
+D None of the above
+R B
+
+Q 0 How would you ensure that a panel appeared at the top of its container:
+A Use a BorderLayout and a constraint of BorderLayout.TOP
+B Use a CardLayout and a constraint of FlowLayout.TOP
+C Use a BorderLayout and a constraint of BorderLayout.NORTH
+D Use a CardLayout and a constraint of FlowLayout.NORTH
+R C
+
+Q 0 You should use layout management, instead of picking layout positions by hand, because:
+A What looks good at 640x480 won't look good at 1600x1600, and vice versa
+B Components might be hidden if users resize a window smaller than it started
+C FlowLayout will lay components in the "correct" order for a user's language settings
+D All of the above
+R D
+
+Q 0 Which of these accepts the addActionListener call:
+A Button/JButton, List/JList
+B Button/JButton, TextField/JTextField, MenuItem/JMenuItem
+C Window/JWindow/JFrame
+D Everything subclassed from Component
+R B
+
+Q 0 To create a pop-up help window, which classes would you likely use?
+R C
+A JPopup and JTextArea
+B JDialog and JHelpArea
+C JDialog and JTextArea
+D JDialog and JTextField
+
+Q 0 The Swing classes that are part of Java Foundation Classes:
+R C
+A Provide three-dimensional graphics capabilities
+B Allow you to convert, or swing, back and forth from Java to C++
+C Advance AWT from a skeletal GUI API to a full-function, professional toolkit
+D None of the above
+
+Q 0 Window systems were invented by:
+A Bill Gates of Microsoft
+B Steve Jobs of Apple
+C Researchers at Xerox PARC
+D Researchers at Sun Microsystems
+R C
+
+Q 0 Which of these is a valid way of setting the size of a Frame/JFrame:
+A setSize(w, h);
+B pack();
+C setBounds(w, h, x, y);
+D All of the above
+R D
+
