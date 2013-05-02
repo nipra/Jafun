@@ -8,3 +8,5 @@
 
 .classpath
 .project
+.metadata
+mr/.settings
