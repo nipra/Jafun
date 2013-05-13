@@ -1,15 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.nipra</groupId>
-	<artifactId>mr</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
-	<name>mr</name>
-	<url>http://maven.apache.org</url>
-
+	<groupId>com.cloudera</groupId>
+	<artifactId>gapdeduce</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Gap Deduce</name>
 
 	<properties>
 		<hadoop.version>2.0.0-mr1-cdh4.0.1</hadoop.version>
@@ -71,19 +66,26 @@
 			<version>${hadoop.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- For unit testing -->
+		<dependency>
+			<groupId>org.apache.mrunit</groupId>
+			<artifactId>mrunit</artifactId>
+			<version>0.8.0-incubating</version>
+		</dependency>
+
 	</dependencies>
 
 	<repositories>
 		<repository>
-			<id>cloudera</id>
-			<url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
+			<id>maven-hadoop</id>
+			<name>Hadoop Releases</name>
+			<url>https://repository.cloudera.com/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>cloudera-repos</id>
+			<name>Cloudera Repos</name>
+			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
 		</repository>
 	</repositories>
-
 </project>
