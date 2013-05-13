@@ -14,3 +14,9 @@ Eclipse
 =======
 
 (nprabhak@nprabhak-mn ~/Projects/Java/Jafun/mr)$ mvn -Declipse.workspace=/Users/nprabhak/Projects/Java/Jafun/mr eclipse:configure-workspace eclipse:eclipse
+
+MR
+==
+Reference:
+
+* Running a Job in a Local Job Runner. [Hadoop TDG 3e]
