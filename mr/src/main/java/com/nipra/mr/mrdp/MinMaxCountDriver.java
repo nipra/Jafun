@@ -44,7 +44,7 @@ public class MinMaxCountDriver {
 			// the min and max value of
 			String strDate = parsed.get("CreationDate");
 
-			// Grab the “UserID” since it is what we are grouping by
+			// Grab the "UserID" since it is what we are grouping by
 			String userId = parsed.get("UserId");
 
 			// .get will return null if the key is not there
