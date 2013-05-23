@@ -4,3 +4,7 @@ $ mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch03 \
 
 $ mvn install
 $ mvn clean
+
+$ mvn archetype:create -DgroupId=org.nipra.scratch -DartifactId=scratch -DpackageName=org.nipra.scratch
+
+mvn -Declipse.workspace=<eclipse-workspace-path>   eclipse:configure-workspace eclipse:eclipse
