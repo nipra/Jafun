@@ -10,3 +10,6 @@
 .project
 .metadata
 mr/.settings
+
+maven-archiver
+surefire-reports
