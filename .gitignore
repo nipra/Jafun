@@ -9,7 +9,10 @@
 .classpath
 .project
 .metadata
-mr/.settings
+.settings
+dependency-reduced-pom.xml
 
 maven-archiver
 surefire-reports
+
+.DS_Store
