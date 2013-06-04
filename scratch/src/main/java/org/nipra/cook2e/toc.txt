@@ -1,0 +1,367 @@
+    Chapter 1 Getting Started: Compiling, Running, and Debugging
+        Introduction
+        Compiling and Running Java: JDK
+        Editing and Compiling with a Color-Highlighting Editor
+        Compiling, Running, and Testing with an IDE
+        Using CLASSPATH Effectively
+        Using the com.darwinsys API Classes from This Book
+        Compiling the Source Code Examples from This Book
+        Automating Compilation with Ant
+        Running Applets
+        Dealing with Deprecation Warnings
+        Conditional Debugging Without #ifdef
+        Debugging Printouts
+        Maintaining Program Correctness with Assertions
+        Debugging with JDB
+        Unit Testing: Avoid the Need for Debuggers
+        Getting Readable Tracebacks
+        Finding More Java Source Code
+        Program: Debug
+    Chapter 2 Interacting with the Environment
+        Introduction
+        Getting Environment Variables
+        System Properties
+        Writing JDK Release-Dependent Code
+        Writing Operating System-Dependent Code
+        Using Extensions or Other Packaged APIs
+        Parsing Command-Line Arguments
+    Chapter 3 Strings and Things
+        Introduction
+        Taking Strings Apart with Substrings
+        Taking Strings Apart with StringTokenizer
+        Putting Strings Together with +, StringBuilder (JDK 1.5), and StringBuffer
+        Processing a String One Character at a Time
+        Aligning Strings
+        Converting Between Unicode Characters and Strings
+        Reversing a String by Word or by Character
+        Expanding and Compressing Tabs
+        Controlling Case
+        Indenting Text Documents
+        Entering Nonprintable Characters
+        Trimming Blanks from the End of a String
+        Parsing Comma-Separated Data
+        Program: A Simple Text Formatter
+        Program: Soundex Name Comparisons
+    Chapter 4 Pattern Matching with Regular Expressions
+        Introduction
+        Regular Expression Syntax
+        Using regexes in Java: Test for a Pattern
+        Finding the Matching Text
+        Replacing the Matched Text
+        Printing All Occurrences of a Pattern
+        Printing Lines Containing a Pattern
+        Controlling Case in Regular Expressions
+        Matching "Accented" or Composite Characters
+        Matching Newlines in Text
+        Program: Apache Logfile Parsing
+        Program: Data Mining
+        Program: Full Grep
+    Chapter 5 Numbers
+        Introduction
+        Checking Whether a String Is a Valid Number
+        Storing a Larger Number in a Smaller Number
+        Converting Numbers to Objects and Vice Versa
+        Taking a Fraction of an Integer Without Using Floating Point
+        Ensuring the Accuracy of Floating-Point Numbers
+        Comparing Floating-Point Numbers
+        Rounding Floating-Point Numbers
+        Formatting Numbers
+        Converting Between Binary, Octal, Decimal, and Hexadecimal
+        Operating on a Series of Integers
+        Working with Roman Numerals
+        Formatting with Correct Plurals
+        Generating Random Numbers
+        Generating Better Random Numbers
+        Calculating Trigonometric Functions
+        Taking Logarithms
+        Multiplying Matrices
+        Using Complex Numbers
+        Handling Very Large Numbers
+        Program: TempConverter
+        Program: Number Palindromes
+    Chapter 6 Dates and Times
+        Introduction
+        Finding Today's Date
+        Printing Date/Time in a Given Format
+        Representing Dates in Other Epochs
+        Converting YMDHMS to a Calendar or Epoch Seconds
+        Parsing Strings into Dates
+        Converting Epoch Seconds to DMYHMS
+        Adding to or Subtracting from a Dateor Calendar
+        Difference Between Two Dates
+        Comparing Dates
+        Day of Week/Month/Year or Week Number
+        Creating a Calendar Page
+        Measuring Elapsed Time
+        Sleeping for a While
+        Program: Reminder Service
+    Chapter 7 Structuring Data with Java
+        Introduction
+        Using Arrays for Data Structuring
+        Resizing an Array
+        Like an Array, but More Dynamic
+        Using Iterators for Data-Independent Access
+        Structuring Data in a Linked List
+        Mapping with Hashtable and HashMap
+        Storing Strings in Properties and Preferences
+        Sorting a Collection
+        Avoiding the Urge to Sort
+        Eschewing Duplication
+        Finding an Object in a Collection
+        Converting a Collection to an Array
+        Rolling Your Own Iterator
+        Stack
+        Multidimensional Structures
+        Finally, Collections
+        Program: Timing Comparisons
+    Chapter 8 Data Structuring with Generics, foreach, and Enumerations (JDK 1.5)
+        Introduction
+        Using Generic Collections
+        Using "foreach" Loops
+        Avoid Casting by Using Generics
+        Let Java Convert with AutoBoxing and AutoUnboxing
+        Using Typesafe Enumerations
+        Program: MediaInvoicer
+    Chapter 9 Object-Oriented Techniques
+        Introduction
+        Printing Objects: Formatting with toString( )
+        Overriding the Equals Method
+        Overriding the hashCode Method
+        The Clone Method
+        The Finalize Method
+        Using Inner Classes
+        Providing Callbacks via Interfaces
+        Polymorphism/Abstract Methods
+        Passing Values
+        Enforcing the Singleton Pattern
+        Roll Your Own Exceptions
+        Program: Plotter
+    Chapter 10 Input and Output
+        Introduction
+        Reading Standard Input
+        Writing Standard Output
+        Printing with the 1.5 Formatter
+        Scanning a File with StreamTokenizer
+        Scanning Input with the 1.5 Scanner Class
+        Opening a File by Name
+        Copying a File
+        Reading a File into a String
+        Reassigning the Standard Streams
+        Duplicating a Stream as It Is Written
+        Reading/Writing a Different Character Set
+        Those Pesky End-of-Line Characters
+        Beware Platform-Dependent File Code
+        Reading "Continued" Lines
+        Binary Data
+        Seeking
+        Writing Data Streams from C
+        Saving and Restoring Java Objects
+        Preventing ClassCastExceptions with SerialVersionUID
+        Reading and Writing JAR or Zip Archives
+        Reading and Writing Compressed Files
+        Program: Text to PostScript
+    Chapter 11 Directory and Filesystem Operations
+        Introduction
+        Getting File Information
+        Creating a File
+        Renaming a File
+        Deleting a File
+        Creating a Transient File
+        Changing File Attributes
+        Listing a Directory
+        Getting the Directory Roots
+        Creating New Directories
+        Program: Find
+    Chapter 12 Programming External Devices: Serial and Parallel Ports
+        Introduction
+        Choosing a Port
+        Opening a Serial Port
+        Opening a Parallel Port
+        Resolving Port Conflicts
+        Reading and Writing: Lock-Step
+        Reading and Writing: Event-Driven
+        Reading and Writing: Threads
+        Program: Penman Plotter
+    Chapter 13 Graphics and Sound
+        Introduction
+        Painting with a Graphics Object
+        Testing Graphical Components
+        Drawing Text
+        Drawing Centered Text in a Component
+        Drawing a Drop Shadow
+        Drawing Text with 2D
+        Drawing Text with an Application Font
+        Drawing an Image
+        Playing a Sound File
+        Playing a Video Clip
+        Printing in Java
+        Program: PlotterAWT
+        Program: Grapher
+    Chapter 14 Graphical User Interfaces
+        Introduction
+        Displaying GUI Components
+        Designing a Window Layout
+        A Tabbed View of Life
+        Action Handling: Making Buttons Work
+        Action Handling Using Anonymous Inner Classes
+        Terminating a Program with"Window Close"
+        Dialogs: When Later Just Won't Do
+        Catching and Formatting GUI Exceptions
+        Getting Program Output into a Window
+        Choosing a Value with JSpinner
+        Choosing a File with JFileChooser
+        Choosing a Color
+        Formatting JComponents with HTML
+        Centering a Main Window
+        Changing a Swing Program's Look and Feel
+        Enhancing Your GUI for Mac OS X
+        Program: Custom Font Chooser
+        Program: Custom Layout Manager
+    Chapter 15 Internationalization and Localization
+        Introduction
+        Creating a Button with I18N Resources
+        Listing Available Locales
+        Creating a Menu with I18N Resources
+        Writing Internationalization Convenience Routines
+        Creating a Dialog with I18N Resources
+        Creating a Resource Bundle
+        Extracting Strings from Your Code
+        Using a Particular Locale
+        Setting the Default Locale
+        Formatting Messages
+        Program: MenuIntl
+        Program: BusCard
+    Chapter 16 Network Clients
+        Introduction
+        Contacting a Server
+        Finding and Reporting Network Addresses
+        Handling Network Errors
+        Reading and Writing Textual Data
+        Reading and Writing Binary Data
+        Reading and Writing Serialized Data
+        UDP Datagrams
+        Program: TFTP UDP Client
+        Program: Telnet Client
+        Program: Chat Client
+    Chapter 17 Server-Side Java: Sockets
+        Introduction
+        Opening a Server for Business
+        Returning a Response (String or Binary)
+        Returning Object Information
+        Handling Multiple Clients
+        Serving the HTTP Protocol
+        Securing a Web Server with SSL and JSSE
+        Network Logging
+        Network Logging with log4j
+        Network Logging with JDK 1.4
+        Finding Network Interfaces
+        Program: A Java Chat Server
+    Chapter 18 Network Clients II: Applets and Web Clients
+        Introduction
+        Embedding Java in a Web Page
+        Applet Techniques
+        Contacting a Server on the Applet Host
+        Making an Applet Show a Document
+        Making an Applet Run JavaScript
+        Making an Applet Run a CGI Script
+        Reading the Contents of a URL
+        URI, URL, or URN?
+        Extracting HTML from a URL
+        Extracting URLs from a File
+        Converting a Filename to a URL
+        Program: MkIndex
+        Program: LinkChecker
+    Chapter 19 Java and Electronic Mail
+        Introduction
+        Sending Email: Browser Version
+        Sending Email: For Real
+        Mail-Enabling a Server Program
+        Sending MIME Mail
+        Providing Mail Settings
+        Sending Mail Without Using JavaMail
+        Reading Email
+        Program: MailReaderBean
+        Program: MailClient
+    Chapter 20 Database Access
+        Introduction
+        Easy Database Access with JDO
+        Text-File Databases
+        DBM Databases
+        JDBC Setup and Connection
+        Connecting to a JDBC Database
+        Sending a JDBC Query and Getting Results
+        Using JDBC Prepared Statements
+        Using Stored Procedures with JDBC
+        Changing Data Using a ResultSet
+        Storing Results in a RowSet
+        Changing Data Using SQL
+        Finding JDBC Metadata
+        Program: SQLRunner
+    Chapter 21 XML
+        Introduction
+        Generating XML from Objects
+        Transforming XML with XSLT
+        Parsing XML with SAX
+        Parsing XML with DOM
+        Verifying Structure with a DTD
+        Generating Your Own XML with DOM
+        Program: xml2mif
+    Chapter 22 Distributed Java: RMI
+        Introduction
+        Defining the RMI Contract
+        Creating an RMI Client
+        Creating an RMI Server
+        Deploying RMI Across a Network
+        Program: RMI Callbacks
+        Program: NetWatch
+    Chapter 23 Packages and Packaging
+        Introduction
+        Creating a Package
+        Documenting Classes with Javadoc
+        Beyond JavaDoc: Annotations/Metadata (JDK 1.5) and XDoclet
+        Archiving with jar
+        Running an Applet from a JAR
+        Running an Applet with a Modern JDK
+        Running a Main Program from a JAR
+        Preparing a Class as a JavaBean
+        Pickling Your Bean into a JAR
+        Packaging a Servlet into a WAR File
+        "Write Once, Install Anywhere"
+        "Write Once, Install on Mac OS X"
+        Java Web Start
+        Signing Your JAR File
+    Chapter 24 Threaded Java
+        Introduction
+        Running Code in a Different Thread
+        Displaying a Moving Image with Animation
+        Stopping a Thread
+        Rendezvous and Timeouts
+        Synchronizing Threads with the synchronized Keyword
+        Simplifying Synchronization with 1.5 Locks
+        Synchronizing Threads with wait( ) and notifyAll( )
+        Simplifying Producer-Consumer with the 1.5 Queue Interface
+        Background Saving in an Editor
+        Program: Threaded Network Server
+        Simplifying Servers Using the Concurrency Utilities (JDK 1.5)
+    Chapter 25 Introspection, or "A Class Named Class"
+        Introduction
+        Getting a Class Descriptor
+        Finding and Using Methods and Fields
+        Loading and Instantiating a Class Dynamically
+        Constructing a Class from Scratch
+        Performance Timing
+        Printing Class Information
+        Program: CrossRef
+        Program: AppletViewer
+    Chapter 26 Using Java with Other Languages
+        Introduction
+        Running a Program
+        Running a Program and Capturing Its Output
+        Mixing Java and Scripts with BSF
+        Marrying Java and Perl
+        Blending in Native Code (C/C++)
+        Calling Java from Native Code
+        Program: DBM
+    Chapter Afterword
+
+    Colophon
