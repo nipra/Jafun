@@ -1,0 +1,2 @@
+(nprabhak@nprabhak-mn ~/Projects/Java/Jafun/scratch)$ mvn install
+(nprabhak@nprabhak-mn ~/Projects/Java/Jafun/scratch)$ java -cp target/scratch-1.0-SNAPSHOT.jar org.nipra.scratch.App
