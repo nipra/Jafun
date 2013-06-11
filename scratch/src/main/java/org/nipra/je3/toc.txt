@@ -1,247 +1,246 @@
-    Learning Java
-        Chapter 1 Java Basics
-            Hello World
-            FizzBuzz
-            The Fibonacci Series
-            Using Command-Line Arguments
-            Echo in Reverse
-            FizzBuzz Switched
-            Computing Factorials
-            Recursive Factorials
-            Caching Factorials
-            Computing Big Factorials
-            Handling Exceptions
-            Interactive Input
-            Using a StringBuffer
-            Sorting Numbers
-            Computing Primes
-            Exercises
-        Chapter 2 Objects, Classes, and Interfaces
-            A Rectangle Class
-            Testing the Rect Class
-            A Rect Subclass
-            Another Subclass
-            Complex Numbers
-            Computing Statistics
-            An Integer List
-            Tokenizing Text
-            Exercises
-    Core Java APIs
-        Chapter 3 Input/Output
-            Files and Streams
-            Working with Files
-            Copying File Contents
-            Reading and Displaying Text Files
-            Listing Directory and File Information
-            Compressing Files and Directories
-            Filtering Character Streams
-            Tokenizing a Character Stream
-            Random Access to Files
-            Exercises
-        Chapter 4 Threads
-            Thread Basics
-            Thread-Safe Classes
-            Threads and Thread Groups
-            Deadlock
-            Timers
-            Exercises
-        Chapter 5 Networking
-            Downloading the Contents of a URL
-            Using a URLConnection
-            Sending Email Through a URLConnection
-            A Simple Network Client
-            A Generic Client
-            An HTTP Client
-            A POP Client
-            A Simple Web Server
-            A Proxy Server
-            A Generic Multithreaded Server
-            Sending Datagrams
-            Receiving Datagrams
-            Exercises
-        Chapter 6 New I/O
-            Locking Files
-            Copying Files
-            Regular Expressions and Character Decoding
-            File Copying with Buffers
-            Advanced Byte-to-Character Conversion
-            Tokenizing Byte Buffers
-            A Simple HTTP Client
-            The Daytime Service
-            A Multiplexed Server
-            A Multiplexed Network Client
-            Exercises
-        Chapter 7 Security and Cryptography
-            Running Untrusted Code
-            Loading Untrusted Code
-            Message Digests and Digital Signatures
-            Cryptography
-            Exercises
-        Chapter 8 Internationalization
-            A Word About Locales
-            Unicode
-            Character Encodings
-            Handling Local Customs
-            Localizing User-Visible Messages
-            Formatted Messages
-            Exercises
-        Chapter 9 Reflection
-            Obtaining Class and Member Information
-            Invoking a Named Method
-            Proxy Objects
-            Exercises
-        Chapter 10 Object Serialization
-            Simple Serialization
-            Custom Serialization
-            Externalizable Classes
-            Serialization and Class Versioning
-            Exercises
-    Desktop Java APIs
-        Chapter 11 Graphical User Interfaces
-            Components
-            Containers
-            Layout Management
-            Event Handling
-            A Complete GUI
-            Actions and Reflection
-            Custom Dialogs
-            An Error Handler Dialog
-            Displaying Tables
-            Displaying Trees
-            A Simple Web Browser
-            Describing GUIs with Properties
-            Themes and the Metal Look-and-Feel
-            Look-and-Feel Preferences
-            The ShowBean Program
-            Exercises
-        Chapter 12 Graphics
-            Graphics Before Java 1.2
-            The Java 2D API
-            Drawing and Filling Shapes
-            Transforms
-            Line Styles with BasicStroke
-            Stroking Lines
-            Filling Shapes with Paint
-            Antialiasing
-            Combining Colors with AlphaComposite
-            Image Processing
-            Image I/O
-            Custom Shapes
-            Custom Strokes
-            Custom Paint
-            Advanced Animation
-            Displaying Graphics Examples
-            Exercises
-        Chapter 13 Printing
-            Printing with the Java 1.1 API
-            Printing with the Java 1.2 API
-            Printing with the Java 1.4 API
-            Printing Multipage Text Documents
-            Advanced Printing with Java 1.4
-            Exercises
-        Chapter 14 Data Transfer
-            Simple Swing Data Transfer
-            A Clock with Drag and Copy Support
-            Data Transfer Architecture
-            Dropping Multiple Datatypes
-            A Transferable Shape
-            Custom Data Transfer
-            Exercises
-        Chapter 15 JavaBeans
-            Bean Basics
-            A Simple Bean
-            A More Complex Bean
-            Custom Events
-            Specifying Bean Information
-            Defining a Simple Property Editor
-            Defining a Complex Property Editor
-            Defining a Bean Customizer
-            Manipulating Beans
-            Exercises
-        Chapter 16 Applets
-            Introduction to Applets
-            A First Applet
-            A Clock Applet
-            A Timer Applet
-            Applets and the Java 1.0 Event Model
-            Exercises
-        Chapter 17 Sound
-            Ringing the Bell
-            Swing Aural Cues
-            Playing Sounds with AudioClip
-            Playing Sounds with javax.sound
-            Streaming Sounds with javax.sound
-            Synthesizing a MIDI Sequence
-            Real-Time MIDI Sounds
-            Exercises
-    Enterprise Java APIs
-        Chapter 18 Database Access with SQL
-            Accessing a Database
-            Using Database Metadata
-            Building a Database
-            Using the API Database
-            Atomic Transactions
-            Exercises
-        Chapter 19 XML
-            Parsing with JAXP and SAX
-            Parsing and Manipulating with JAXP and DOM
-            Transforming XML with XSLT
-            An XML Pull Parser
-            Exercises
-        Chapter 20 Servlets and JavaServer Pages
-            Servlet Setup
-            A Hello World Servlet
-            Another Simple Servlet
-            Servlet Initialization and Persistence: A Counter Servlet
-            Hello JSP
-            Hello JSP2
-            Hello XML
-            The MVC Paradigm for Web Applications
-            ListManager Model Classes
-            ListManager Controller
-            ListManager Views
-            Custom Tags in JSP 2.0
-            Packaging a Web Application
-            Exercises
-        Chapter 21 Remote Method Invocation
-            Remote Banking
-            A Bank Server
-            A Persistent Bank Server
-            A Multiuser Domain
-            Remote MUD Interfaces
-            The MUD Server
-            The MudPlace Class
-            The MudPerson Class
-            A MUD Client
-            Advanced RMI
-            Exercises
-        Chapter 22 Example Index
-            Symbols
-            A
-            B
-            C
-            D
-            E
-            F
-            G
-            H
-            I
-            J
-            K
-            L
-            M
-            N
-            O
-            P
-            Q
-            R
-            S
-            T
-            U
-            V
-            W
-            X
-            Y
-            Z
-
-    Colophon
+Learning Java
+    Chapter 1 Java Basics
+        Hello World
+        FizzBuzz
+        The Fibonacci Series
+        Using Command-Line Arguments
+        Echo in Reverse
+        FizzBuzz Switched
+        Computing Factorials
+        Recursive Factorials
+        Caching Factorials
+        Computing Big Factorials
+        Handling Exceptions
+        Interactive Input
+        Using a StringBuffer
+        Sorting Numbers
+        Computing Primes
+        Exercises
+    Chapter 2 Objects, Classes, and Interfaces
+        A Rectangle Class
+        Testing the Rect Class
+        A Rect Subclass
+        Another Subclass
+        Complex Numbers
+        Computing Statistics
+        An Integer List
+        Tokenizing Text
+        Exercises
+Core Java APIs
+    Chapter 3 Input/Output
+        Files and Streams
+        Working with Files
+        Copying File Contents
+        Reading and Displaying Text Files
+        Listing Directory and File Information
+        Compressing Files and Directories
+        Filtering Character Streams
+        Tokenizing a Character Stream
+        Random Access to Files
+        Exercises
+    Chapter 4 Threads
+        Thread Basics
+        Thread-Safe Classes
+        Threads and Thread Groups
+        Deadlock
+        Timers
+        Exercises
+    Chapter 5 Networking
+        Downloading the Contents of a URL
+        Using a URLConnection
+        Sending Email Through a URLConnection
+        A Simple Network Client
+        A Generic Client
+        An HTTP Client
+        A POP Client
+        A Simple Web Server
+        A Proxy Server
+        A Generic Multithreaded Server
+        Sending Datagrams
+        Receiving Datagrams
+        Exercises
+    Chapter 6 New I/O
+        Locking Files
+        Copying Files
+        Regular Expressions and Character Decoding
+        File Copying with Buffers
+        Advanced Byte-to-Character Conversion
+        Tokenizing Byte Buffers
+        A Simple HTTP Client
+        The Daytime Service
+        A Multiplexed Server
+        A Multiplexed Network Client
+        Exercises
+    Chapter 7 Security and Cryptography
+        Running Untrusted Code
+        Loading Untrusted Code
+        Message Digests and Digital Signatures
+        Cryptography
+        Exercises
+    Chapter 8 Internationalization
+        A Word About Locales
+        Unicode
+        Character Encodings
+        Handling Local Customs
+        Localizing User-Visible Messages
+        Formatted Messages
+        Exercises
+    Chapter 9 Reflection
+        Obtaining Class and Member Information
+        Invoking a Named Method
+        Proxy Objects
+        Exercises
+    Chapter 10 Object Serialization
+        Simple Serialization
+        Custom Serialization
+        Externalizable Classes
+        Serialization and Class Versioning
+        Exercises
+Desktop Java APIs
+    Chapter 11 Graphical User Interfaces
+        Components
+        Containers
+        Layout Management
+        Event Handling
+        A Complete GUI
+        Actions and Reflection
+        Custom Dialogs
+        An Error Handler Dialog
+        Displaying Tables
+        Displaying Trees
+        A Simple Web Browser
+        Describing GUIs with Properties
+        Themes and the Metal Look-and-Feel
+        Look-and-Feel Preferences
+        The ShowBean Program
+        Exercises
+    Chapter 12 Graphics
+        Graphics Before Java 1.2
+        The Java 2D API
+        Drawing and Filling Shapes
+        Transforms
+        Line Styles with BasicStroke
+        Stroking Lines
+        Filling Shapes with Paint
+        Antialiasing
+        Combining Colors with AlphaComposite
+        Image Processing
+        Image I/O
+        Custom Shapes
+        Custom Strokes
+        Custom Paint
+        Advanced Animation
+        Displaying Graphics Examples
+        Exercises
+    Chapter 13 Printing
+        Printing with the Java 1.1 API
+        Printing with the Java 1.2 API
+        Printing with the Java 1.4 API
+        Printing Multipage Text Documents
+        Advanced Printing with Java 1.4
+        Exercises
+    Chapter 14 Data Transfer
+        Simple Swing Data Transfer
+        A Clock with Drag and Copy Support
+        Data Transfer Architecture
+        Dropping Multiple Datatypes
+        A Transferable Shape
+        Custom Data Transfer
+        Exercises
+    Chapter 15 JavaBeans
+        Bean Basics
+        A Simple Bean
+        A More Complex Bean
+        Custom Events
+        Specifying Bean Information
+        Defining a Simple Property Editor
+        Defining a Complex Property Editor
+        Defining a Bean Customizer
+        Manipulating Beans
+        Exercises
+    Chapter 16 Applets
+        Introduction to Applets
+        A First Applet
+        A Clock Applet
+        A Timer Applet
+        Applets and the Java 1.0 Event Model
+        Exercises
+    Chapter 17 Sound
+        Ringing the Bell
+        Swing Aural Cues
+        Playing Sounds with AudioClip
+        Playing Sounds with javax.sound
+        Streaming Sounds with javax.sound
+        Synthesizing a MIDI Sequence
+        Real-Time MIDI Sounds
+        Exercises
+Enterprise Java APIs
+    Chapter 18 Database Access with SQL
+        Accessing a Database
+        Using Database Metadata
+        Building a Database
+        Using the API Database
+        Atomic Transactions
+        Exercises
+    Chapter 19 XML
+        Parsing with JAXP and SAX
+        Parsing and Manipulating with JAXP and DOM
+        Transforming XML with XSLT
+        An XML Pull Parser
+        Exercises
+    Chapter 20 Servlets and JavaServer Pages
+        Servlet Setup
+        A Hello World Servlet
+        Another Simple Servlet
+        Servlet Initialization and Persistence: A Countervlet
+        Hello JSP
+        Hello JSP2
+        Hello XML
+        The MVC Paradigm for Web Applications
+        ListManager Model Classes
+        ListManager Controller
+        ListManager Views
+        Custom Tags in JSP 2.0
+        Packaging a Web Application
+        Exercises
+    Chapter 21 Remote Method Invocation
+        Remote Banking
+        A Bank Server
+        A Persistent Bank Server
+        A Multiuser Domain
+        Remote MUD Interfaces
+        The MUD Server
+        The MudPlace Class
+        The MudPerson Class
+        A MUD Client
+        Advanced RMI
+        Exercises
+    Chapter 22 Example Index
+        Symbols
+        A
+        B
+        C
+        D
+        E
+        F
+        G
+        H
+        I
+        J
+        K
+        L
+        M
+        N
+        O
+        P
+        Q
+        R
+        S
+        T
+        U
+        V
+        W
+        X
+        Y
+        Z
+Colophon
