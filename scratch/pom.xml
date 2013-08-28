@@ -17,7 +17,7 @@
   <build>
 	<pluginManagement>
 	  <plugins>
-        
+
 		<plugin>
 		  <groupId>org.apache.maven.plugins</groupId>
 		  <artifactId>maven-compiler-plugin</artifactId>
@@ -28,7 +28,6 @@
             <!-- <includes> -->
             <!--   <include>org/nipra/je3/Echo.java</include> -->
             <!-- </includes> -->
-
             <excludes>
               <exclude>org/nipra/je3/Factorial.java</exclude>
               <exclude>org/nipra/je3/FactComputer.java</exclude>
@@ -50,6 +49,24 @@
               <manifest>
                 <mainClass>org.nipra.je3.FizzBuzz</mainClass>
               </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>
+          <configuration>
+            <archive>
+              <index>true</index>
+              <manifest>
+                <addClasspath>true</addClasspath>
+              </manifest>
+              <manifestEntries>
+                <!-- http://stackoverflow.com/questions/52353/in-java-what-is-the-best-way-to-determine-the-size-of-an-object -->
+                <Premain-Class>org.nipra.utils.ObjectSizeFetcher</Premain-Class>
+              </manifestEntries>
             </archive>
           </configuration>
         </plugin>
