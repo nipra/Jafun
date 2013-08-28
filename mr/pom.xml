@@ -12,7 +12,8 @@
 
 
   <properties>
-	<hadoop.version>2.0.0-mr1-cdh4.0.1</hadoop.version>
+	<!-- <hadoop.version>2.0.0-mr1-cdh4.0.1</hadoop.version> -->
+    <hadoop.version>1.0.3</hadoop.version>
   </properties>
 
   <build>
@@ -41,6 +42,28 @@
 			<goals>
 			  <goal>shade</goal>
 			</goals>
+            
+            <configuration>
+              <filters>
+
+                <!-- http://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar -->
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+              
+              <transformers>
+                <!-- http://stackoverflow.com/a/13181099/254675 -->
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
+                </transformer>
+              </transformers>
+            </configuration>
+
 		  </execution>
 		</executions>
 	  </plugin>
@@ -69,8 +92,25 @@
 	  <groupId>org.apache.hadoop</groupId>
 	  <artifactId>hadoop-client</artifactId>
 	  <version>${hadoop.version}</version>
-	  <scope>provided</scope>
+	  <!-- <scope>provided</scope> -->
 	</dependency>
+
+    <dependency>
+	  <groupId>cascading</groupId>
+	  <artifactId>cascading-core</artifactId>
+	  <version>2.1.6</version>
+	</dependency>
+	<dependency>
+	  <groupId>cascading</groupId>
+	  <artifactId>cascading-hadoop</artifactId>
+	  <version>2.1.6</version>
+	</dependency>
+	<dependency>
+	  <groupId>cascading</groupId>
+	  <artifactId>cascading-local</artifactId>
+	  <version>2.1.6</version>
+	</dependency>
+
   </dependencies>
 
   <repositories>
@@ -83,6 +123,10 @@
 	  <snapshots>
 		<enabled>false</enabled>
 	  </snapshots>
+	</repository>
+    <repository>
+	  <id>conjars.org</id>
+	  <url>http://conjars.org/repo</url>
 	</repository>
   </repositories>
 
