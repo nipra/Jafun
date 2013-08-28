@@ -15,3 +15,10 @@ mvn -Declipse.workspace=<eclipse-workspace-path>   eclipse:configure-workspace e
 (nprabhak@nprabhak-mn ~/Projects/Java/Jafun/scratch)$ java -cp target/classes org.nipra.je3.FizzBuzz
 
 (nprabhak@nprabhak-mn ~/Projects/Java/Jafun/scratch)$ mvn clean compiler:compile jar:jar
+
+$ mvn archetype:generate \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DarchetypeArtifactId=maven-archetype-quickstart \
+  -DgroupId=HBaseIA \
+  -DartifactId=twitbase-async \
+  -Dversion=1.0.0
