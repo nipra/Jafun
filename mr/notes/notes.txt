@@ -6,6 +6,8 @@ https://github.com/cloudera/mapreduce-tutorial
 MRDP
 ====
 
+* All of the examples in this book are written for Hadoop version 1.0.3.
+
 (nprabhak@nprabhak-mn ~/Projects/Java/Jafun/mr)$ hadoop jar target/mr-0.0.1-SNAPSHOT.jar com.nipra.mr.mrdp.MinMaxCountDriver /mrdp/comments.xml /mrdp-output/min-max-count
 
 (nprabhak@nprabhak-mn ~/Projects/Java/Jafun/mr)$ hadoop jar target/mr-0.0.1-SNAPSHOT.jar com.nipra.mr.mrdp.MinMaxCountDriver2 /mrdp/comments.xml /mrdp-output/min-max-count2

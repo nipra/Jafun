@@ -22,3 +22,7 @@ $ mvn archetype:generate \
   -DgroupId=HBaseIA \
   -DartifactId=twitbase-async \
   -Dversion=1.0.0
+
+(nprabhak@nprabhak-mn ~/Projects/Java/Jafun/scratch)$ javac -d target/classes/ src/main/java/org/nipra/scratch/HelloRunnable.java
+(nprabhak@nprabhak-mn ~/Projects/Java/Jafun/scratch)$ java -cp target/classes org.nipra.scratch.HelloRunnable
+  
