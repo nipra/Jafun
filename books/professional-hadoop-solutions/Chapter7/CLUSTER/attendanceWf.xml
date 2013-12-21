@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app name="attendance-wf" xmlns="uri:oozie:workflow:0.1">
+    <start to='attendance'/>
+    <action name='attendance'>
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>/user/ayakubov/oozie/OzExam/pig/attendInd.pig</script>
+        </pig>
+        <ok to="report-success"/>
+        <error to="report-failure"/>
+    </action>
+    <action name='report-success'>
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>alexey.yakubovich@nokia.com</to>
+            <cc>alexey.yakubovich@nokia.com</cc>
+            <subject>attendance-wf succeeded</subject>
+            <body>attendance-wf succeeded</body>
+        </email>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <action name='report-failure'>
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>alexeyy2@yahoo.com</to>
+            <cc>team@yahoo.com</cc>
+            <subject>attendance-wf failed</subject>
+            <body>attendance-wf failed at ${wf:lastErrorNode()}</body>
+        </email>
+        <ok to="fail"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>attendance-wf failed: error
+                        [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

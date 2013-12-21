@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>arch024,arch020,arch021,arch022,arch023</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.property.clientPort</name>
+		<value>2181</value>
+	</property>
+</configuration>

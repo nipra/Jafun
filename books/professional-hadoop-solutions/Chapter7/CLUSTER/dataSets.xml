@@ -1,0 +1,13 @@
+<dataset name="probesDataset" frequency="${coord:hours(4)}" initial-instance="2013-01-10T08:00Z" timezone="America/Chicago">
+	<uri-template>
+		${fullPath}/probes/${YEAR}/${MONTH}/${DAY}/${HOUR}/data
+	</uri-template>
+	<done-flag/>
+</dataset>
+<dataset name="placesDataset" frequency="${coord:hours(4)}" initial-instance="2013-01-10T08:00Z" timezone="America/Chicago">
+        <uri-template>
+                ${fullPath}/places/${YEAR}/${MONTH}/${DAY}/${HOUR}/data
+        </uri-template>
+        <done-flag/>
+</dataset>
+

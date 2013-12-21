@@ -1,0 +1,11 @@
+<coordinator-app name="data-prep-coord" frequency="${coord:hours(1)}" start="2013-01-01T008:00Z" end="2013-06-01T08:00Z" timezone="UTC" xmlns="uri:oozie:coordinator:0.1">
+	<controls>
+		<timeout>180</timeout>
+                <concurrency>2</concurrency>
+	</controls>
+	<action>
+		<workflow>
+			<app-path>hdfs://sachicn001:8020/user/ayakubov/oozie/OzExam/dataPrep/</app-path>
+		</workflow>
+	</action>
+</coordinator-app>

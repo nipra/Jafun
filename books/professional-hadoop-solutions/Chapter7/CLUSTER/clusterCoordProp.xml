@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <property>
+    <name>jobTracker</name>
+    <value>sachicn003:2010</value>
+  </property>
+  <property>
+    <name>nameNode</name>
+    <value>hdfs://sachicn001:8020</value>
+  </property>
+  <property>
+    <name>oozie.coord.application.path</name>
+    <value>hdfs://sachicn001:8020/user/ayakubov/oozie/OzExam/cluster/coordinator.xml</value>
+  </property>
+  <property>
+    <name>oozie.wf.application.lib</name>
+    <value>/user/ayakubov/oozie/OzExam/lib/mapquad.nakia3d-0.0.1-SNAPSHOT.jar,/sharedlib/activation-1.1.jar,/sharedlib/antlr-runtime-3.0.1.jar,/sharedlib/archival-1.0.jar,/sharedlib/asm-3.1.jar,/sharedlib/avro-1.5.4.jar,/sharedlib/avro-ipc-1.5.3.jar,/sharedlib/avro-mapred-1.5.3.jar,/sharedlib/commons-collections-3.2.1.jar,/sharedlib/commons-dbcp-1.4.jar,/sharedlib/commons-io-1.4.jar,/sharedlib/commons-lang-2.6.jar,/sharedlib/commons-logging-1.0.4.jar,/sharedlib/commons-pool-1.5.4.jar,/sharedlib/conf-xml,/sharedlib/dataaccess-1.0.jar,/sharedlib/datanucleus-connectionpool-2.0.3.jar,/sharedlib/datanucleus-core-2.0.3.jar,/sharedlib/datanucleus-enhancer-2.0.3.jar,/sharedlib/datanucleus-rdbms-2.0.3.jar,/sharedlib/derby-10.6.1.0.jar,/sharedlib/dtac-common-1.0.jar,/sharedlib/etl-1.0.jar,/sharedlib/guava-r09-jarjar.jar,/sharedlib/hadoop-streaming-0.20.2-cdh3u3.jar,/sharedlib/haivvreo-1.0.7-cdh-2.jar,/sharedlib/hbase-0.90.4-cdh3u3.jar,/sharedlib/hdfsmgmt-1.0.jar,/sharedlib/hive-cli-0.7.1-cdh3u3.jar,/sharedlib/hive-common-0.7.1-cdh3u3.jar,/sharedlib/hive-contrib-0.7.1-cdh3u3.jar,/sharedlib/hive-exec-0.7.1-cdh3u3.jar,/sharedlib/hive-metastore-0.7.1-cdh3u3.jar,/sharedlib/hive-serde-0.7.1-cdh3u3.jar,/sharedlib/hive-service-0.7.1-cdh3u3.jar,/sharedlib/hive-shims-0.7.1-cdh3u3.jar,/sharedlib/jaxb-api-2.1.jar,/sharedlib/jdo2-api-2.3-ec.jar,/sharedlib/jline-0.9.94.jar,/sharedlib/joda-time-1.6.jar,/sharedlib/jopt-simple-3.2.jar,/sharedlib/jsch-0.1.38.jar,/sharedlib/json-20090211.jar,/sharedlib/jta-1.1.jar,/sharedlib/jython-2.5.0.jar,/sharedlib/kfs-0.3.jar,/sharedlib/libfb303-0.5.0-cdh.jar,/sharedlib/libthrift-0.5.0-cdh.jar,/sharedlib/log4j-1.2.14.jar,/sharedlib/mail-1.4.jar,/sharedlib/mysql-connector-java-5.1.9.jar,/sharedlib/netty-3.2.4.Final.jar,/sharedlib/paranamer-2.3.jar,/sharedlib/pig-0.8.1-cdh3u3.jar,/sharedlib/scribe-mgmt-1.0.jar,/sharedlib/sharelib.properties,/sharedlib/sqoop-1.3.0-cdh3u3.jar,/sharedlib/stax-api-1.0.1.jar,/sharedlib/stringtemplate-3.1-b1.jar,/sharedlib/velocity-1.5.jar,/sharedlib/zookeeper-3.3.4-cdh3u3.jar</value>
+  </property>
+</configuration>  

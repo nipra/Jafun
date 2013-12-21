@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>
+Examples from Java I/O, 2nd Edition
+</title>
+<meta name="description" content="This site contains the complete
+source code for all examples from Java I/O, 2nd Edition by Elliotte Rusty Harold,
+O'Reilly, 2006" />
+<meta name="keywords" content="Java, source, code, input, output, IO, I/O 
+Elliotte, Rusty, Harold, O'Reilly" />
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<h1>Examples from Java I/O, 2nd Edition</h1>
+
+ <p>
+The complete set 
+of examples is also available for anonymous ftp from
+<a href="ftp://ftp.ibiblio.org/pub/languages/java/javafaq/ioexamples2.zip">
+ftp://ftp.ibiblio.org/pub/languages/java/javafaq/ioexamples2.zip</a> or via <a href="ioexamples2.zip">HTTP from IBiblio</a>.
+</p>
+<p>
+Please feel free to use any fragment of this code you need in your own work.
+As far as I am concerned, it's in the public domain. No permission
+is necessary or required. Credit is always appreciated if you use a large
+chunk or base a significant product on one of my examples,
+but that's not required either.
+</p>
+<ul>
+<li><a href="01/index.html">1 Introducing I/O</a></li>
+<li><a href="02/index.html">2 Output Streams</a></li>
+<li><a href="03/index.html">3 Input Streams</a></li>
+<li><a href="04/index.html">4 File Streams</a></li>
+	<li><a href="05/index.html">5 Network Streams</a></li>
+	<li><a href="06/index.html">6 Filter Streams</a></li>
+	<li><a href="07/index.html">7 Print Streams</a></li>
+	<li><a href="08/index.html">8 Data Streams</a></li>
+	<li><a href="08/index.html">9 Streams in Memory</a></li>
+	<li><a href="10/index.html">10 Compressing Streams</a></li>
+	<li><a href="10/index.html">10 Encrypting Streams</a></li>
+	<li><a href="11/index.html">11 JAR Archives</a></li>
+	<li><a href="12/index.html">12 Cryptographic Streams</a></li>
+	<li><a href="13/index.html">13 Object Serialization</a></li>
+	<li><a href="14/index.html">14 Buffers</a></li>
+	<li><a href="15/index.html">15 Channels</a></li>
+	<li><a href="16/index.html">16 Nonblocking I/O</a></li>
+	<li><a href="17/index.html">17 Working with Files</a></li>
+  <li><a href="18/index.html">18 File Dialogs and Choosers</a></li>
+  <li><a href="19/index.html">19 Character Sets and Unicode</a></li>
+	<li><a href="20/index.html">20 Readers and Writers</a></li>
+<li><a href="21/index.html">21 Formatted I/O with java.text</a></li>
+<li><a href="22/index.html">22 The Java Communications API</a></li>
+<li><a href="23/index.html">23 USB</a></li>
+<li><a href="24/index.html">24  The J2ME Generic Connection Framework</a></li>
+<li><a href="25/index.html">25 Bluetooth</a></li>
+</ul>
+<p>
+The examples that are likely to be reused
+are placed in the <code>com.elharo</code> package. Examples that merely demonstrate a point
+or run as a stand alone program or applet are generally placed in the
+default package. This means you will need to pay attention to classpath
+issues when compiling files. Simply typing 
+</p>
+
+<p><samp>$ javac *.java</samp></p>
+
+<p>
+will generally fail to compile those files that depend on 
+classes in the com.elharo package, generally because the source code
+file in the local directory takes precedence over the previously compiled file
+found in the class path. Typing
+</p>
+
+<p><samp>$ javac -d . *.java
+</samp></p>
+
+<p>
+will generally be more successful. Depending on how you organize
+your source code files, in some cases you may need to move source code files from
+one directory to another where the compiler can't find them
+to avoid compiler error messages that claim something like:
+</p>
+
+<blockquote>error: File .\JavaFilter.java does not contain type JavaFilter as expected. 
+Please adjust the class path so that the file does not appear in the unnamed package
+</blockquote>
+
+<p>
+This error message is misleading. What it really means is that the <code>JavaFilter</code>
+class is in fact <strong>not</strong> in the unnamed package.
+When the compiler is compiling a different file that uses the short, non-package
+qualified name <code>JavaFilter</code> instead of the full, package-qualified
+name <code>com.elharo.swing.filechooser.JavaFilter</code>, the compiler first looks for
+a class in the unnamed package named <code>JavaFilter</code>. If it finds a file
+named <code>JavaFilter.java</code> in the current directory, it will try 
+to compile that, which will fail because <code>JavaFilter.java</code> contains
+<code>com.elharo.swing.filechooser.JavaFilter</code> and not <code>JavaFilter</code>.
+The solution is much simpler than the explanation: first compile <code>JavaFilter.java</code>
+and place the resulting JavaFilter.class in the right place in your class path;
+move <code>JavaFilter.java</code> out of the current directory; and 
+then compile the file that
+depends on <code>JavaFilter.java</code>.
+</p>
+
+<p>
+To run a program in a non-default package
+from the command line, you'll need to use the full, package qualified name.
+For example, it's not enought to simply type 
+</p>
+
+<pre><samp>$ java StreamCopier
+</samp></pre>
+
+<p>You have to type</p>
+
+<p><samp>$ java com.elharo.io.StreamCopier
+</samp></p>
+<!-- <p>
+A JAR archive 
+(<a href="ftp://metalab.unc.edu/pub/languages/java/javafaq/javaio.jar">javaio.jar</a>) is available that includes compiled versions
+of all classes in the <code>com.elharo</code> packages.  
+In Java 1.1 you can add this archive to
+your classpath to have access to all the <code>com.elharo</code> classes.
+For example,</p>
+
+<p>
+<samp>% setenv CLASSPATH $CLASSPATH:/<i>path</i>/<i>to</i>/<i>directory</i>/<i>containing</i>/javaio.jar
+</samp><p>
+In Java 1.2 and later, you can simply copy the javaio.jar file to your 
+<code>jre/lib/ext</code> directory.
+</p>
+
+<p>
+Note that if you try to download this JAR archive to your computer using a 
+web browser,
+it may give you various errrors about security violations or corrupt 
+JAR formats. This is inaccurate. Your browser is incorrectly acting as if you want
+to load a JAR archive for an applet rather than simply download a file.
+You may be able to avoid the problem by right-clicking
+on the link and selecting "Save this link as..." or the equivalent rather
+than simply clicking on the link in your browser.
+If that fails, you can try downloading it from
+ftp://metalab.unc.edu/pub/languages/java/javafaq/ using an FTP program instead of a Web browser.
+</p> -->
+<hr />
+<div align="center">[ <a href="http://www.cafeaulait.org/books/javaio2/">Java I/O Home Page</a> ]
+</div>
+
+<hr />
+<div align="center">[ <a href="http://www.cafeaulait.org/">Cafe Au Lait</a> 
+| <a href="http://www.cafeconleche.org/">Cafe con Leche</a> 
+| <a href="http://www.elharo.com/blog/">Mokka mit Schlag</a> 
+| <a href="http://cafe.elharo.com/">The Cafes</a> 
+| <a href="http://www.cafeaulait.org/tradeshows.html">Conferences</a> 
+| <a href="http://www.cafeaulait.org/javafaq.html">FAQ</a> | <a href="http://www.cafeaulait.org/javatutorial.html">Tutorial</a> 
+| <a href="http://www.cafeaulait.org/usergroups.html">User Groups</a> ]</div>
+<hr />
+Copyright 2006 <a href="http://www.elharo.com/">Elliotte Rusty Harold</a><br />
+<a href="mailto:elharo%40metalab%2Eunc%2Eedu">elharo@metalab.unc.edu</a><br />
+Last Modified May 23, 2006
+</body>
+</html>

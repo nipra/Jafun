@@ -1,0 +1,50 @@
+<workflow-app name="dyn-swf" xmlns="uri:oozie:workflow:0.3"
+	xmlns:sla="uri:oozie:sla:0.1">
+	<start to="cluster" />
+	<action name="cluster">
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<job-xml>${clusterProperties}</job-xml>
+			<main-class>com.practicalHadoop.strand.Cluster</main-class>
+			<arg>-radius=${radius}</arg>
+		</java>
+		<ok to="range-clusters" />
+		<error to="report-failure" />
+	</action>
+	<action name="range-clusters">
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<job-xml>${Properties}</job-xml>
+			<main-class>com.practicalHadoop.strand.rangeClusters</main-class>
+			<arg>-denityThreshold=${densThreshold}</arg>
+			<capture-output />
+		</java>
+		<ok to="report-success" />
+		<error to="report-failure" />
+	</action>
+	<action name='report-success'>
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<job-xml>${clusterProperties}</job-xml>
+			<main-class>com.practicalHadoop.strand.SaveSFWData</main-class>
+		</java>
+		<ok to="fail" />
+		<error to="end" />
+	</action>
+	<action name='report-failure'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			[EMAIL ACTION BODY]
+		</email>
+		<ok to="end" />
+		<error to="fail" />
+	</action>
+	<kill name="fail">
+		<message>
+			cluster-wf failed, error message: [${wf:errorMessage(wf:lastErrorNode())}]
+		</message>
+	</kill>
+	<end name="end" />
+</workflow-app>

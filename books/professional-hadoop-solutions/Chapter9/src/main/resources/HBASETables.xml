@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:tables xmlns:tns="http://lucene.practicalHadoop.com/tables/configuration"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://lucene.practicalHadoop.com/tables/configuration HBASETables.xsd ">
+	<tns:rebuild>false</tns:rebuild>
+	<tns:table>
+		<tns:name>LuceneIndexTable</tns:name>
+		<tns:description>Lucene Index Support</tns:description>
+	    <tns:purpose>index</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable10</tns:name>
+		<tns:description>Lucene Index Support for level 10</tns:description>
+	    <tns:purpose>index10</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable11</tns:name>
+		<tns:description>Lucene Index Support for level 11</tns:description>
+	    <tns:purpose>index11</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable12</tns:name>
+		<tns:description>Lucene Index Support for level 12</tns:description>
+	    <tns:purpose>index12</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable13</tns:name>
+		<tns:description>Lucene Index Support for level 13</tns:description>
+	    <tns:purpose>index13</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable14</tns:name>
+		<tns:description>Lucene Index Support for level 14</tns:description>
+	    <tns:purpose>index14</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable15</tns:name>
+		<tns:description>Lucene Index Support for level 15</tns:description>
+	    <tns:purpose>index15</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable16</tns:name>
+		<tns:description>Lucene Index Support for level 16</tns:description>
+	    <tns:purpose>index16</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable17</tns:name>
+		<tns:description>Lucene Index Support for level 17</tns:description>
+	    <tns:purpose>index17</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable18</tns:name>
+		<tns:description>Lucene Index Support for level 18</tns:description>
+	    <tns:purpose>index18</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable19</tns:name>
+		<tns:description>Lucene Index Support for level 19</tns:description>
+	    <tns:purpose>index19</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable20</tns:name>
+		<tns:description>Lucene Index Support for level 18</tns:description>
+	    <tns:purpose>index20</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable21</tns:name>
+		<tns:description>Lucene Index Support for level 21</tns:description>
+	    <tns:purpose>index21</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable22</tns:name>
+		<tns:description>Lucene Index Support for level 22</tns:description>
+	    <tns:purpose>index22</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable23</tns:name>
+		<tns:description>Lucene Index Support for level 23</tns:description>
+	    <tns:purpose>index23</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneIndexTable24</tns:name>
+		<tns:description>Lucene Index Support for level 24</tns:description>
+	    <tns:purpose>index24</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>documents</tns:name>
+	    	<tns:purpose>documents</tns:purpose>
+			<tns:description>List of documents for a field/term</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneDocumentsTable</tns:name>
+		<tns:description>Lucene Documents Support</tns:description>
+	    <tns:purpose>documents</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>fields</tns:name>
+	    	<tns:purpose>fields</tns:purpose>
+			<tns:description>List of document fields for a document</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+		<tns:columnFamily>
+			<tns:name>terms</tns:name>
+	    	<tns:purpose>terms</tns:purpose>
+			<tns:description>List of terms for a document</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+	<tns:table>
+		<tns:name>LuceneNormsTable</tns:name>
+		<tns:description>Lucene Norms Support</tns:description>
+	    <tns:purpose>norms</tns:purpose>
+		<tns:maxFileSize>2048</tns:maxFileSize>
+		<tns:columnFamily>
+			<tns:name>norms</tns:name>
+	    	<tns:purpose>norms</tns:purpose>
+			<tns:description>List of norms for field</tns:description>
+			<tns:max_versions>1</tns:max_versions>
+			<tns:in_memory>false</tns:in_memory>
+			<tns:block_cache_enabled>true</tns:block_cache_enabled>
+		</tns:columnFamily>
+	</tns:table>
+</tns:tables>

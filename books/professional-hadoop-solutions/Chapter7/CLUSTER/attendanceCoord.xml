@@ -1,0 +1,11 @@
+<coordinator-app name="attendance-coord" frequency="${coord:hours(4)}" start="2013-01-04T008:10Z" end="2013-06-01T08:00Z" timezone="UTC" xmlns="uri:oozie:coordinator:0.1">
+        <controls>
+                <timeout>180</timeout>
+                <concurrency>2</concurrency>
+        </controls>
+        <action>
+                <workflow>
+                        <app-path>hdfs://sachicn001:8020/user/ayakubov/oozie/OzExam/attendance/</app-path>
+                </workflow>
+        </action>
+</coordinator-app>

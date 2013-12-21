@@ -1,0 +1,63 @@
+<workflow-app name="dyn-wf" xmlns="uri:oozie:workflow:0.3"
+	xmlns:sla="uri:oozie:sla:0.1">
+	<start to="call-dyn-wf_1" />
+	<action name="call-dyn-wf_1">
+		<sub-workflow>
+			<app-path>dynWF.xml</app-path>
+			<configuration>
+				<property>
+					<name>radius</name>
+					<value>0.05</value>
+				</property>
+				<property>
+					<name>densThreshold</name>
+					<value>10</value>
+				</property>
+			</configuration>
+		</sub-workflow>
+		<ok to="check-dynSWF_1" />
+		<error to="fail" />
+	</action>
+	<action name='check-dynSWF_1'>
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<main-class>com.practicalHadoop.strand.CheckDynSWF</main-class>
+			<capture-output />
+		</java>
+		<ok to="decide-continue" />
+		<error to="report-failure" />
+	</action>
+	<decision name="decide-continue_1">
+		<switch>
+			<case to="report-success">${wf:actionData('check-dynSWF')['done'
+				== "true"]}
+			</case>
+			<default to== " call-dyn-wf_2 ">
+		</switch>
+	</decision>
+	[repeat the group of actions call-dyn-wf_X, check-dynSWF_X and
+	decidecontinue_
+	X the specified number times ]
+	<action name='report-failure'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			[EMAIL ACTION BODY]
+		</email>
+		<ok to="fail" />
+		<error to="fail" />
+	</action>
+	<action name='report-success'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			[EMAIL ACTION BODY]
+		</email>
+		<ok to="end" />
+		<error to="fail" />
+	</action>
+	<kill name="fail">
+		<message>
+			cluster-wf failed, error message:
+			[${wf:errorMessage(wf:lastErrorNode())}]
+		</message>
+	</kill>
+	<end name="end" />
+</workflow-app>

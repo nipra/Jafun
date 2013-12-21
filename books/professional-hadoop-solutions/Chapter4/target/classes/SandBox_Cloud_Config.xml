@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>"Zookeeper IPs"</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.property.clientPort</name>
+		<value>2181</value>
+	</property>
+	<property>
+		<name>fs.default.name</name>
+		<value>"name node URL"</value>
+	</property>
+	<property>
+		<name>hadoop.job.ugi</name>
+		<value>hadoop, hadoop</value>
+	</property>
+</configuration>

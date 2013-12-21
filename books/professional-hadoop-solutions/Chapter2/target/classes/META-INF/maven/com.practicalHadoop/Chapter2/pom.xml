@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.practicalHadoop</groupId>
+	<artifactId>Chapter2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<hbase.version>0.90.4-cdh3u2</hbase.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>CDH Releases and RCs Repositories</id>
+			<url>https://repository.cloudera.com/content/groups/cdh-releases-rcs</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase</artifactId>
+			<version>${hbase.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+	</dependencies>
+</project>

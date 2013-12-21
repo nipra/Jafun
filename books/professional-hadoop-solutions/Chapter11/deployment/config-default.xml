@@ -1,0 +1,14 @@
+<configuration>
+    <property>
+        <name>jobTracker</name>
+        <value>sachicn003:2010</value>
+    </property>
+    <property>
+        <name>nameNode</name>
+        <value>hdfs://sachicn001:8020</value>
+    </property>
+    <property>
+        <name>queueName</name>
+        <value>default</value>
+    </property>
+</configuration>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app name="cluster-wf" xmlns="uri:oozie:workflow:0.1">
+	<start to='cluster'/>
+	<action name='cluster'>
+		<java>
+	            <job-tracker>${jobTracker}</job-tracker>
+		    <name-node>${nameNode}</name-node>
+	            <main-class>com.practicalHadoop.strand.Cluster</main-class>
+		</java>
+		<ok to="report-success"/>
+		<error to="report-failure"/>
+	</action>
+	<action name='report-success'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			<to>alexey.yakubovich@nokia.com</to>
+			<cc>alexey.yakubovich@nokia.com</cc>
+			<subject>attendance-wf succeeded</subject>
+			<body>attendance-wf succeeded</body>
+		</email>
+		<ok to="end"/>
+		<error to="fail"/>
+	</action>
+	<action name='report-failure'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			<to>team@yahoo.com</to>
+			<cc>team@yahoo.com</cc>
+			<subject>cluster-wf failed</subject>
+			<body>cluster-wf failed with ${wf:errorMessage(wf:lastErrorNode())} </body>
+		</email>
+		<ok to="fail"/>
+		<error to="fail"/>
+	</action>
+	<kill name="fail">
+		<message> data-prep-wf failed: error
+			[${wf:errorMessage(wf:lastErrorNode())}]</message>
+	</kill>
+	<end name="end"/>
+</workflow-app>

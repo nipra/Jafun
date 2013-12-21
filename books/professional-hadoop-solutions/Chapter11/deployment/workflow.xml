@@ -1,0 +1,75 @@
+<!--
+Copyright (c) 2013 NOKIA Inc. All rights reserved.
+Oozie Script for publication of building tiles to S3
+-->
+<workflow-app xmlns='uri:oozie:workflow:0.2' name='TileS3Publication'>
+	<start to="generateLandmarkDelta"/>
+
+	<action name="generateLandmarkDelta">
+		<java> 
+			<job-tracker>${jobTracker}</job-tracker> 
+			<name-node>${nameNode}</name-node> 
+			<main-class>com.nokia.ec.s3copytool.landmark.LandmarksVersioner</main-class>
+			<java-opts>-cp ${classPathJars}</java-opts>
+			<arg>-lookupFilePath</arg>
+			<arg>${nameNode}${deltaFilePath}</arg>
+			<arg>-propertyFilePath</arg>
+			<arg>${nameNode}${propertyFilePath}</arg>
+		</java>
+		<ok to="pushLandmarksToS3"/>
+		<error to="fail"/>
+	</action>
+	
+	<action name="pushLandmarksToS3">
+		<java>
+			<job-tracker>${jobTracker}</job-tracker> 
+			<name-node>${nameNode}</name-node> 
+			<main-class>com.nokia.ec.s3copytool.landmark.LandmarksPublisher</main-class>
+			<java-opts>-cp ${classPathJars}</java-opts>
+			<arg>-hdfsLandmarkPath</arg>
+			<arg>${hdfsLandmarkPath}</arg>
+			<arg>-s3PublicationBucket</arg>
+			<arg>${s3PublicationBucket}</arg>
+			<arg>-mappers</arg>
+			<arg>50</arg>
+			<arg>-threads</arg>
+			<arg>20</arg>
+			<arg>-logLevel</arg>
+			<arg>INFO</arg>
+			<arg>-lookupFilePath</arg>
+			<arg>${deltaFilePath}</arg>
+		</java>
+		<ok to="pushBuildingTilesToS3"/>
+		<error to="fail"/>
+	</action>
+	
+	<action name="pushBuildingTilesToS3">
+		<java>
+			<job-tracker>${jobTracker}</job-tracker> 
+			<name-node>${nameNode}</name-node> 
+			<main-class>com.nokia.ec.s3copytool.tile.TilePublisherHadoopJob</main-class>
+			<java-opts>-cp ${classPathJars}</java-opts>
+			<arg>-featureType</arg>
+			<arg>building</arg>
+			<arg>-hdfsFeatureTypePath</arg>
+			<arg>${hdfsFeatureTypePath}</arg>
+			<arg>-s3PublicationBucket</arg>
+			<arg>${s3PublicationBucket}</arg>
+			<arg>-mappers</arg>
+			<arg>50</arg>
+			<arg>-threads</arg>
+			<arg>20</arg>
+			<arg>-logLevel</arg>
+			<arg>INFO</arg>
+			<arg>-lookupFilePath</arg>
+			<arg>${deltaFilePath}</arg>
+		</java>
+		<ok to="end"/>
+		<error to="fail"/>
+	</action>
+	
+	<kill name="fail">
+		<message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+	</kill>
+	<end name="end"/>
+</workflow-app>

@@ -1,0 +1,14 @@
+<bundle-app name="place-validation-bl" xmlns='uri:oozie:bundle:0.1'>
+    <controls>
+        <kick-off-time>2012-12-10T008:00Z</kick-off-time>
+    </controls>
+    <coordinator name="data-prep-coord">
+        <app-path>/user/ayakubov/oozie/OzExam/dataPrep</app-path>
+    </coordinator>
+    <coordinator name="attendance-coord">
+        <app-path>/user/ayakubov/oozie/OzExam/attendance</app-path>
+    </coordinator>
+    <coordinator name="cluster-coord">
+        <app-path>/user/ayakubov/oozie/OzExam/cluster</app-path>
+    </coordinator>
+</bundle-app>

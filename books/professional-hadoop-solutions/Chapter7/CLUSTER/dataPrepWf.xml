@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app name="data-prep-wf" xmlns="uri:oozie:workflow:0.1">
+	<start to='prep-fork'/>
+	<fork name="prep-fork">
+		<path start="select-probes"/>
+		<path start="select-places"/>
+	</fork>
+	<action name='select-probes'>
+		<hive xmlns="uri:oozie:hive-action:0.2">
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<configuration>
+			<property>
+				<name>oozie.hive.defaults</name>
+				<value>/user/ayakubov/oozie/OzExam/hive/hive-default.xml</value>
+			</property>
+			</configuration>
+			<script>/user/ayakubov/oozie/OzExam/hive/selectProbes.hql</script>
+                        <param>-start=2012.01.01</param>
+                        <param>-end=2012.03.31</param>
+                        <param>-bbox=41.82,-87.68,41.99,-87.62</param>
+		</hive>
+		<ok to="build-strands"/>
+		<error to="digout-error"/>
+	</action>
+	<action name='build-strands'>
+		<pig>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<prepare> [PREPARE SECTION] </prepare>
+			<job-xml>${buildStrandsProperties}</job-xml>
+			<configuration> [CONFIGURATION SECTION]</configuration>
+			<script>/user/practicalHadoop/pig/strands.pig</script>
+			<param>-distance=${distance}</param>
+			<param>-timeSpan=${timeSpan}</param>
+		</pig>		
+		<ok to="geotile-strands"/>
+		<error to="digout-error"/>
+		<sla:info> [SLA SECTION] </sla:info>
+	</action>
+	<action name='geotile-strands'>
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<prepare>  
+				<delete path="${strandsTilesPathTmp}"/>
+				<delete path="${strandsTilesPathOut}"/>
+				<mkdir path="${strandsTilesPathTmp}"/>			
+			</prepare>
+			<job-xml>${geotileStrandsProperties}</job-xml>
+			<configuration>  
+				<property>
+					<name>pool.name</name>
+					<value>ARCHITECTURE</value>
+				</property>
+				<property>
+					<name>oozie.launcher.pool.name</name>
+					<value>ARCHITECTURE</value>
+				</property>
+				<property>
+					<name>oozie.launcher.mapred.job.priority</name>
+					<value>HIGH</value>
+				</property>
+				<property>
+					<name>mapred.job.priority</name>
+					<value>HIGH</value>
+				</property>
+				<property>
+					<name>spatial4jVer</name>
+					<value>5.2</value>
+				</property>			
+			</configuration>
+			<main-class> com.practicalHadoop.geotile.Strands</main-class>
+			<java-opts>${Dopt_loglevel} ${Xopt_jvm}</java-opts>
+			<arg>-tileSize=${tileLevel}</arg>
+			<arg>-strandCenter=${strandCenter}</arg>
+			<arg>-bBox=${bbox}</arg>
+			<arg>-strandCardinality=${cardinality}</arg>
+			<arg>-centerMethod=${strandCenterMethod}</arg>
+			<capture-output />
+		</java>
+		<ok to="prep-join"/>
+		<error to="digout-error"/>
+		<sla:info>  
+			<sla:app-name> geotile-strands </sla:app-name>
+			<sla:nominal-time>${startExtract}</sla:nominal-time>
+			<sla:should-start>${5 * MINUTES}</sla:should-start>
+			<sla:should-end>${15 * MINUTES}</sla:should-end>
+			<sla:parent-client-id> data-prep-wf </sla:parent-client-id>
+			<sla:parent-sla-id> validate-places </sla:parent-sla-id>
+			<sla:notification-msg>notification for action: geotile-strands</sla:notification-msg>
+			<sla:alert-contact>sla.alert@team.com</sla:alert-contact>
+			<sla:dev-contact>sla>dev@team.com</sla:dev-contact>
+			<sla:qa-contact>sla.qa@team.com</sla:qa-contact>
+			<sla:se-contact>sla.se@team.com</sla:se-contact>
+			<sla:alert-frequency> ${24 * LAST_HOUR} </sla:alert-frequency>
+			<sla:alert-percentage>90</sla:alert-percentage>
+			<sla:upstream-apps> places </sla:upstream-apps>		
+		</sla:info>
+	</action>
+	<action name='select-places'>
+		<hive  xmlns="uri:oozie:hive-action:0.2">
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+
+			<configuration>
+			<property>
+				<name>oozie.hive.defaults</name>
+				<value>/user/ayakubov/oozie/OzExam/hive/hive-default.xml</value>
+			</property>
+			</configuration>
+			<script>/user/ayakubov/oozie/OzExam/hive/selectPlaces.hql</script>
+		</hive>
+		<ok to="geotile-places"/>
+		<error to="digout-error"/>
+	</action>
+	<action name='geotile-places'>
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<main-class>com.practicalHadoop.geotile.Places</main-class>
+		</java>
+		<ok to="prep-join"/>
+		<error to="digout-error"/>
+	</action>
+	<join name="prep-join" to="report-success"/>
+	<action name='digout-error'>
+		<java>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<main-class>com.practicalHadoop.util.Digout</main-class>
+		</java>
+		<ok to="report-failure"/>
+		<error to="fail"/>
+	</action>
+	<action name='report-success'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			<to>alexey.yakubovich@nokia.com</to>
+			<cc>alexey.yakubovich@nokia.com</cc>
+			<subject>data-prep-wf succeeded</subject>
+			<body>data-prep-wf succeeded</body>
+		</email>
+		<ok to="end"/>
+		<error to="fail"/>
+	</action>
+	<action name='report-failure'>
+		<email xmlns="uri:oozie:email-action:0.1">
+			<to>alexeyy2@yahoo.com</to>
+			<cc>team@yahoo.com</cc>
+			<subject>data-prep-wf failed</subject>
+			<body>data-prep-wf failed at ${wf:lastErrorNode()}</body>
+		</email>
+		<ok to="fail"/>
+		<error to="fail"/>
+	</action>
+	<kill name="fail">
+		<message> data-prep-wf failed: error
+			[${wf:errorMessage(wf:lastErrorNode())}]</message>
+	</kill>
+	<end name="end"/>
+</workflow-app>

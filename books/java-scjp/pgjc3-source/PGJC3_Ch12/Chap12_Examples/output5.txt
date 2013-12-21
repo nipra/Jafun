@@ -1,1 +1,0 @@
-5:Formatted output|  2008|12345,68|Hello     |
