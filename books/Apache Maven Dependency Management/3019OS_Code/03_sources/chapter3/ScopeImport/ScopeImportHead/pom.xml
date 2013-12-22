@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>
+        com.packt.dependencyManagement.chapter3.scopeImport
+    </groupId>
+    <artifactId>head</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Example of POM with scope import
+        dependencyManagement of two artifacts with a version
+        conflict because of transitive dependencies
+    </name>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-core</artifactId>
+                <!-- Explicit declaration of version-->
+                <version>1.2.0</version>
+            </dependency>
+
+            <dependency>
+                <!-- The artifact induces a transitive
+                dependency to:
+                'org.apache.hadoop:hadoop-tools:jar:1.0.4'
+                Therefore, there is a potential conflict
+                with the version of the artifact declared above-->
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-hadoop</artifactId>
+                <version>1.0.0.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!-- spring-data-hadoop is explicitely declared as a dependency. Then its scope and version will be retrieved from the <dependencyManagement> data: 1.0.0.RELEASE
+        Besides, the induced dependency ('org.apache.hadoop:hadoop-tools:jar:1.0.4') should be inherited.
+        Unlike, org.apache.hadoop:hadoop-tools:jar:1.2.0, that is *not* declared, will *not* be retrieved, even though it appears in the <dependencyManagement> block -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-hadoop</artifactId>
+        </dependency>
+    </dependencies>
+</project>

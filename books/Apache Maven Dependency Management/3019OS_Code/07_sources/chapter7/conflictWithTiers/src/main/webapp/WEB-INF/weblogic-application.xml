@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE weblogic-application PUBLIC
+        "-//BEA Systems, Inc.//DTD WebLogic Application 7.0.0//EN"
+        "http://www.oracle.com/technology/weblogic/weblogic-application/1.1/weblogic-application.xsd">
+<weblogic-application>
+    <!--Apache Commons provoke conflicts with WebLogic: with the block below, we tell WebLogic the packages for which to prefer the dependencies of the WAR over the dependencies of the WebLogic itself-->
+    <prefer-application-packages>
+        <package-name>org.apache.commons.*</package-name>
+        <!--For this block to be taken in account, the tag <prefer-web-inf-classes> from weblogic.xml must be set at *true* -->
+    </prefer-application-packages>
+</weblogic-application>

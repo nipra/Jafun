@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.packt.dependencyManagement.chapter2
+    </groupId>
+    <artifactId>multimodule-withProfiles</artifactId>
+    <name>Example multimodule POM using profiles</name>
+    <packaging>pom</packaging>
+    <version>1.2.3-SNAPSHOT</version>
+
+    <profiles>
+        <profile>
+            <!-- In this profile, all submodules will be built ;
+            please note the order of build: from the module with the least dependencies,
+            to the module with the most ones -->
+            <id>all</id>
+            <activation>
+                <!-- This profile is active by default, if no other is specified-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <!--Submodules needed to build EAR-->
+                <module>technical</module>
+                <module>entities</module>
+                <module>services-interface</module>
+                <module>Ldap</module>
+                <module>DAO</module>
+                <module>Services-implementation</module>
+                <!--Now EAR can be built-->
+                <module>EAR</module>
+
+                <!--Submodules needed to build WebApp-->
+                <module>Web-resources</module>
+                <!-- Services-implementation and Entities have already been built,
+                we do not mention them here-->
+                <module>JSF-utilities</module>
+                <module>WebApp</module>
+
+                <!--Submodules needed to build Intranet-->
+                <module>Intranet-resources</module>
+                <!-- Services-implementation and Entities have already been built,
+                we do not mention them here-->
+                <module>GWT-utilities</module>
+                <module>Intranet</module>
+            </modules>
+        </profile>
+        <profile>
+            <!--In this profile, we build only artifacts which EAR depends on, then EAR-->
+            <id>EAR</id>
+            <modules>
+                <module>technical</module>
+                <module>entities</module>
+                <module>services-interface</module>
+                <module>Ldap</module>
+                <module>DAO</module>
+                <module>Services-implementation</module>
+                <module>EAR</module>
+            </modules>
+            <activation>
+                <!-- this profile is not active by default : therefore,
+                it will not be called unless explicitly specified -->
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!--In this profile, we build only artifacts which WebApp depends on, then WebApp -->
+            <id>WebApp</id>
+            <modules>
+                <!-- We need add Entities and Services-interface, because unlike above they have not been build-->
+                <module>entities</module>
+                <module>services-interface</module>
+                <module>Web-resources</module>
+                <module>JSF-utilities</module>
+                <module>WebApp</module>
+            </modules>
+        </profile>
+        <profile>
+            <!--In this profile, we build only artifacts which Intranet depends on, then Intranet -->
+            <id>Intranet</id>
+            <modules>
+                <!-- We need add Entities and Services-interface, because unlike above they have not been build-->
+                <module>entities</module>
+                <module>services-interface</module>
+                <module>Intranet-resources</module>
+                <module>GWT-utilities</module>
+                <module>Intranet</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

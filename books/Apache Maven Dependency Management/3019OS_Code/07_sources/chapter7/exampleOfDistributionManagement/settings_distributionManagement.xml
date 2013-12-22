@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <pluginGroups>
+        <pluginGroup>org.eclipse.jetty</pluginGroup>
+    </pluginGroups>
+    <servers>
+        <server>
+            <!-- Repository for releases -->
+            <id>archiva.releases</id>
+            <username>admin</username>
+            <password>admin1</password>
+        </server>
+        <server>
+            <!-- Repository for snapshots -->
+            <id>archiva.snapshots</id>
+            <username>admin</username>
+            <password>admin1</password>
+        </server>
+    </servers>
+</settings>

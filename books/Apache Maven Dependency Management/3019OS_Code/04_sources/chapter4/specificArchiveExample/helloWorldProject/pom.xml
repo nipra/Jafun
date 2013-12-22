@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.packt.dependencyManagement.chapter4
+        </groupId>
+        <artifactId>specificArchiveExample</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>helloWorldProject</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>helloWorldARchive</packaging>
+
+    <build>
+        <plugins>
+            <!--Call the plugin that has just been created-->
+            <plugin>
+                <groupId>
+                    com.packt.dependencyManagement.chapter4
+                </groupId>
+                <artifactId>helloWorldARchivePlugin
+                </artifactId>
+                <version>1.0</version>
+                <!-- These tag and value mean that the plugin will produce a file with a non-standard extension-->
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,21 @@
+Compiled from "Even.java"
+public class Even extends java.lang.Object{
+public Even();
+  Code:
+   0:	aload_0
+   1:	invokespecial	#1; //Method java/lang/Object."<init>":()V
+   4:	return
+
+public boolean even(int);
+  Code:
+   0:	iload_1
+   1:	iconst_1
+   2:	iand
+   3:	ifne	10
+   6:	iconst_1
+   7:	goto	11
+   10:	iconst_0
+   11:	ireturn
+
+}
+

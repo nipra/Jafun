@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>
+        com.packt.dependencyManagement.chapter3.reactor
+    </groupId>
+    <artifactId>reactorSorting</artifactId>
+    <version>1.0</version>
+    <name>Example of project with Maven Reactor sorting:
+        submodules will not be built in the same order as
+        they have been declared
+    </name>
+    <packaging>pom</packaging>
+    <modules>
+        <!--project0 depends on project1-->
+        <module>project0</module>
+        <!--project1 depends on no other project nor plugin-->
+        <module>project1</module>
+        <!--project2 depends on both project0 and project1 ; uses plugin4-->
+        <module>project2</module>
+        <!--Plugin3 is not used by any other module-->
+        <module>plugin3</module>
+        <!--Plugin4 is used by project2-->
+        <module>plugin4</module>
+    </modules>
+    <!--
+        <modules>
+            <module>plugin3</module>
+            <module>project2</module>
+            <module>plugin4</module>
+            <module>project1</module>
+            <module>project0</module>
+        </modules>
+    -->
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>
+                    maven-reactor-plugin
+                </artifactId>
+                <version>1.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

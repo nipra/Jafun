@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Database Configuration -->
+    <import resource="classpath:DataSource.xml"/>
+    <import resource="classpath:HibernateSessionFactory.xml"/>
+
+    <!-- Scan the package and retrieve all Spring beans (here: a Component, a Service and a Repository)-->
+    <context:component-scan annotation-config="true"
+                            base-package="com.packt.dependencyManagement.chapter6"/>
+
+</beans>

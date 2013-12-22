@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>
+        com.packt.dependencyManagement.chapter4
+    </groupId>
+    <artifactId>dynamicPom</artifactId>
+    <version>1.0</version>
+    <properties>
+        <spring.version>3.2.3.RELEASE</spring.version>
+        <jedi.version>3.0.5</jedi.version>
+    </properties>
+    <name>Example of dynamic POM: Maven will preprocess the
+        pom.xml, in order to get an effective POM, before
+        running it
+    </name>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resource</directory>
+                <!--include the XML files corresponding to the environment: PROD, UAT, DEV. Here, the only XML file is a Spring configuration one. There is one file per environment-->
+                <includes>
+                    <include>
+                        **/*-${environment}.xml
+                    </include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jedi</groupId>
+            <!--For this dependency two artifacts are available, one for jdk5 or and a second for jdk6-->
+            <artifactId>jedi-${jdk.version}</artifactId>
+            <version>${jedi.version}</version>
+        </dependency>
+
+        <!-- The dependency to effective JDBC drivers: PostGre, MySQL or HSQLDB-->
+
+        <!--PROD -->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.1-901.jdbc4</version>
+        </dependency>
+        <!--UAT-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.25</version>
+        </dependency>
+        <!--DEV-->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+    </dependencies>
+</project>

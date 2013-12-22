@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Procedure VIEW</title>
+</h:head>
+
+
+<h:body>
+
+    <h:panelGrid column="2">
+        <h:outputText value="Nom">
+        </h:outputText>
+        <h:inputText id="nom" value="#{procedureBean.personneDTOIHM.nom}">
+        </h:inputText>
+        <h:message for="nom"></h:message>
+
+        <h:outputText value="Prenom"></h:outputText>
+        <h:inputText id="prenom"
+                     value="#{procedureBean.personneDTOIHM.prenom}">
+        </h:inputText>
+
+        <h:commandButton value="Enregistrer" id="save"
+                         action="#{procedureBean.enregistrer}">
+
+        </h:commandButton>
+
+    </h:panelGrid>
+
+</h:body>
+
+</html>

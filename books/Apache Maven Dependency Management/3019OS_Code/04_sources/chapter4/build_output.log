@@ -1,0 +1,626 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.packt.dependencyManagement.chapter4:enforcerUseCase:jar:1.0
+[WARNING] 'version' contains an expression but should be a constant. @ com.packt.dependencyManagement.chapter4:enforcerUseCase:${project.parent.version}, C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\enforcerUseCase\pom.xml, line 13, column 14
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Head POM for chapter 4 examples
+[INFO] Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal TODO in order
+        to detect them
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Head POM for chapter 4 examples 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ head ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ head ---
+[INFO] Installing C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\pom.xml to C:\Documents and Settings\jlalou\.m2\repository\com\packt\dependencyManagement\chapter4\head\1.0\head-1.0.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal TODO in order
+        to detect them 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ enforcerUseCase ---
+[INFO] Deleting C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\enforcerUseCase\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ enforcerUseCase ---
+[debug] execute contextualize
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ enforcerUseCase ---
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\enforcerUseCase\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ enforcerUseCase ---
+[debug] execute contextualize
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\enforcerUseCase\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ enforcerUseCase ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ enforcerUseCase ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\enforcerUseCase\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ enforcerUseCase ---
+[INFO] Building jar: C:\workarea\development\PACKT_primeweb\projects\strategic\chapter4\enforcerUseCase\target\enforcerUseCase-1.0.jar
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.2:enforce (default) @ enforcerUseCase ---
+[WARNING] 
+Dependency convergence error for junit:junit:3.8.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant-junit:1.8.2
+        +-junit:junit:3.8.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-junit:junit:4.10
+
+[WARNING] 
+Dependency convergence error for org.apache.ant:ant:1.8.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant:1.8.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant-trax:1.7.1
+        +-org.apache.ant:ant:1.7.1
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant-junit:1.8.2
+        +-org.apache.ant:ant:1.8.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.codehaus.gant:gant_groovy1.8:1.9.6
+        +-org.apache.ant:ant:1.8.2
+
+[WARNING] 
+Dependency convergence error for javax.servlet:jstl:1.0.6 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-javax.servlet:jstl:1.0.6
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-javax.servlet:jstl:1.1.2
+
+[WARNING] 
+Dependency convergence error for org.springframework:spring-context:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-context:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-tx:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-jms:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aspects:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context-support:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-context:3.1.4.RELEASE
+
+[WARNING] 
+Dependency convergence error for taglibs:standard:1.0.6 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-taglibs:standard:1.0.6
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-taglibs:standard:1.1.2
+
+[WARNING] 
+Dependency convergence error for org.springframework:spring-beans:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-beans:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-beans:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-context:2.0.2
+        +-org.springframework:spring-beans:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-tx:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-jms:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aspects:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context-support:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aop:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-beans:3.1.4.RELEASE
+
+[WARNING] 
+Dependency convergence error for org.springframework:spring-web:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-web:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-web:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-web:3.1.4.RELEASE
+
+[WARNING] 
+Dependency convergence error for commons-beanutils:commons-beanutils:1.7.0 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-commons-digester:commons-digester:1.8
+      +-commons-beanutils:commons-beanutils:1.7.0
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-commons-beanutils:commons-beanutils:1.8.3
+
+[WARNING] 
+Dependency convergence error for org.springframework:spring-core:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-beans:2.0.2
+      +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-context:2.0.2
+        +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-tx:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-jms:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-expression:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context-support:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aop:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.springframework:spring-core:3.1.4.RELEASE
+
+[WARNING] 
+Dependency convergence error for commons-io:commons-io:1.3.1 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-commons-io:commons-io:1.3.1
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-commons-io:commons-io:2.1
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-commons-io:commons-io:2.1
+
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.DependencyConvergence failed with message:
+Failed while enforcing releasability the error(s) are [
+Dependency convergence error for junit:junit:3.8.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant-junit:1.8.2
+        +-junit:junit:3.8.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-junit:junit:4.10
+, 
+Dependency convergence error for org.apache.ant:ant:1.8.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant:1.8.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant-trax:1.7.1
+        +-org.apache.ant:ant:1.7.1
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.apache.ant:ant-junit:1.8.2
+        +-org.apache.ant:ant:1.8.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.codehaus.gant:gant_groovy1.8:1.9.6
+        +-org.apache.ant:ant:1.8.2
+, 
+Dependency convergence error for javax.servlet:jstl:1.0.6 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-javax.servlet:jstl:1.0.6
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-javax.servlet:jstl:1.1.2
+, 
+Dependency convergence error for org.springframework:spring-context:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-context:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-tx:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-jms:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aspects:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context-support:3.1.4.RELEASE
+        +-org.springframework:spring-context:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-context:3.1.4.RELEASE
+,
+Dependency convergence error for taglibs:standard:1.0.6 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-taglibs:standard:1.0.6
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-taglibs:standard:1.1.2
+, 
+Dependency convergence error for org.springframework:spring-beans:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-beans:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-beans:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-context:2.0.2
+        +-org.springframework:spring-beans:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-tx:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-jms:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aspects:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context-support:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aop:3.1.4.RELEASE
+        +-org.springframework:spring-beans:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-beans:3.1.4.RELEASE
+, 
+Dependency convergence error for org.springframework:spring-web:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-web:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-web:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-web:3.1.4.RELEASE
+, 
+Dependency convergence error for commons-beanutils:commons-beanutils:1.7.0 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-commons-digester:commons-digester:1.8
+      +-commons-beanutils:commons-beanutils:1.7.0
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-commons-beanutils:commons-beanutils:1.8.3
+, 
+Dependency convergence error for org.springframework:spring-core:2.0.2 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-beans:2.0.2
+      +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-context:2.0.2
+        +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-org.springframework:spring-web:2.0.2
+      +-org.springframework:spring-core:2.0.2
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-spring:2.2.3
+      +-org.springframework:spring-tx:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-jms:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-expression:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-context-support:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-org.springframework:spring-aop:3.1.4.RELEASE
+        +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.springframework:spring-webmvc:3.1.4.RELEASE
+      +-org.springframework:spring-core:3.1.4.RELEASE
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-bootstrap:2.2.3
+      +-org.springframework:spring-core:3.1.4.RELEASE
+, 
+Dependency convergence error for commons-io:commons-io:1.3.1 paths to dependency are:
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.apache.pluto:pluto-portal-driver:1.1.7
+    +-commons-io:commons-io:1.3.1
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-commons-io:commons-io:2.1
+and
++-com.packt.dependencyManagement.chapter4:enforcerUseCase:1.0
+  +-org.grails:grails-web:2.2.3
+    +-org.grails:grails-core:2.2.3
+      +-commons-io:commons-io:2.1
+]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Head POM for chapter 4 examples ................... SUCCESS [0.375s]
+[INFO] Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal TODO in order
+        to detect them  FAILURE [3.234s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.765s
+[INFO] Finished at: Fri Jul 12 15:56:22 CEST 2013
+[INFO] Final Memory: 11M/28M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:1.2:enforce (default) on project enforcerUseCase: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :enforcerUseCase

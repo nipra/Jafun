@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.packt.dependencyManagement.chapter4
+        </groupId>
+        <artifactId>head</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>enforcerMultiRules</artifactId>
+    <version>${project.parent.version}</version>
+    <name>Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal 'enforce' and
+        rule several rules: 'alwaysPass',
+        'alwaysFail', 'bannedDependencies', 'bannedPlugins',
+        'banTransitiveDependencies',
+        'dependencyConvergence', 'evaluateBeanshell',
+        'requireEnvironmentVariable',
+        'requireFilesDontExist', 'requireFilesExist',
+        'requireFilesSize', 'requireJavaVersion',
+        'requireMavenVersion' 'requireNoRepositories',
+        'requireOS', 'requirePluginVersions',
+        'requirePrerequisites', 'requireProperty',
+        'requireReleaseDeps', 'requireReleaseVersion',
+    </name>
+    <dependencies>
+    <dependency>
+            <groupId>org.apache.pluto</groupId>
+            <artifactId>pluto-portal-driver</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.grails</groupId>
+            <artifactId>grails-web</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>
+                    maven-enforcer-plugin
+                </artifactId>
+                <version>1.2</version>
+                <configuration>
+<rules>
+    <!--Always passes... useful to test plugin configuration. The opposite rule is <alwaysFail/> -->
+    <alwaysPass/>
+
+    <!--Equivalent to <bannedDependencies> for plugins-->
+    <bannedPlugins>
+        <excludes>
+            <!-- Here we ban the dependency to JBoss plugin-->
+            <exclude>
+                org.codehaus.mojo:jboss-maven-plugin:1.5.0
+            </exclude>
+        </excludes>
+    </bannedPlugins>
+
+    <!--Bans transitive dependencies. -->
+    <banTransitiveDependencies>
+        <excludes>
+            <!-- Here we ban the dependencies on SNAPSHOTs -->
+            <exclude>
+                *:*:*SNAPSHOT
+            </exclude>
+        </excludes>
+    </banTransitiveDependencies>
+
+    <!--Evaluates a beanshell script (simple boolean expression or complete script with a boolean returned value).
+    For more details on BeanShell syntax and commands, cf http://www.beanshell.org/  -->
+    <evaluateBeanshell>
+        <!-- Here we ensure both this project and its parent POM share the same groupId and version-->
+        <condition>
+            ("${project.groupId}".equals("${project.parent.groupId}"))
+            @and
+            (${project.version}==${project.parent.version})
+        </condition>
+        <message>Build failed because
+            the beanshell returned
+            'false'
+        </message>
+    </evaluateBeanshell>
+
+    <!--Checks the existence of an environment variable -->
+    <requireEnvironmentVariable>
+        <!--Here we check JAVA_HOME and M2_HOME exist and have been set-->
+        <variableName>JAVA_HOME</variableName >
+        <variableName>M2_HOME</variableName >
+    </requireEnvironmentVariable>
+
+    <!--Checks that the files in the list of files do not exist. -->
+    <requireFilesDontExist>
+        <files>
+            <!-- Here we check the file ./helloWorld.txt does *not* exist -->
+            <file>
+                ${project.basedir}/helloWorld.txt
+            </file>
+        </files>
+    </requireFilesDontExist>
+    <!--Checks that the files in the list of files do not exist. -->
+    <requireFilesExist>
+        <files>
+            <!-- Here we check the file pom.xml *does* exist -->
+            <file>
+                ${project.basedir}/pom.xml
+            </file>
+        </files>
+    </requireFilesExist>
+
+    <!--enforces that the list of files exist and are within a certain size range. -->
+    <requireFilesSize>
+        <maxsize>1000000</maxsize>
+        <minsize>1</minsize>
+        <files>
+            <file>
+                ${project.basedir}/pom.xml
+            </file>
+        </files>
+    </requireFilesSize>
+
+    <!--enforces the JDK version.-->
+    <requireJavaVersion>
+        <!--Here we require JDK 5, 6 or 7, but exclude JDK 8-->
+        <version>[1.5,)</version>
+    </requireJavaVersion>
+    <!--enforces the Maven version. -->
+    <requireMavenVersion>
+        <!--Here we require Maven version to be between 2.2 and 3.1-->
+        <version>[2.2,3.1)</version>
+    </requireMavenVersion>
+
+    <!--Bans repositories inclusion. Defining repositories in pom.xml is not advised: best practices consist in using a repository manager-->
+    <requireNoRepositories/>
+
+    <!--enforces the OS and/ir CPU architecture. Available parameters include name, family, arch and version -->
+    <requireOS>
+        <!-- Here we ensure we run on an 86 platform-->
+        <arch>x86</arch>
+    </requireOS>
+
+    <!--Checks a property is set -->
+    <requireProperty>
+        <!-- Here we check a version, a type and a name have been set-->
+        <property>project.version</property>
+        <property>project.type</property>
+        <property>project.name</property>
+    </requireProperty>
+
+    <!--Check no SNAPSHOT is included as a dependency -->
+    <requireReleaseDeps/>
+
+    <!--Checks that the current project is not a snapshot.-->
+    <requireReleaseVersion/>
+</rules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!--We run the goal 'enforce'-->
+                            <goal>enforce</goal>
+                        </goals>
+                        <!-- The goal is called on phase 'verify'-->
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

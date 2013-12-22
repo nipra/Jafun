@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<project name="ProjectFromAnt" default="generateJar">
+    <description>
+        Example of project to migrate from Ant to Maven 3.
+        The main target is generateJar, that compiles the
+        sources and compress them as a Java ARchive.
+    </description>
+
+    <!--Set some properties -->
+    <!--Folder for Java sources -->
+    <property name="src" location="src"/>
+    <!-- Folder for unit tests -->
+    <property name="test" location="test"/>
+    <!--folder for dependencies-->
+    <property name="libdir" location="lib"/>
+    <property name="classesdir" value="target/classes"/>
+    <property name="final.name" value="projectFromAnt"/>
+    <property name="defaulttargetdir" value="target"/>
+    <property name="testclassesdir"
+              value="target/test-classes"/>
+    <property name="testclassesdir"
+              value="target/test-classes"/>
+
+    <!-- Gives the dependencies needed to compile ; there is no easy equivalent to differents scopes, such as provided and runtime -->
+    <path id="build.classpath">
+        <fileset dir="${libdir}">
+            <!-- This JAR contains a POM-->
+            <include name="commons-lang-2.6.jar"/>
+            <!-- This JAR does not contain any POM. But a Manifest.MF is included. Moreover, you can find it in most of public Maven repos -->
+            <include name="commons-cli-1.0.jar"/>
+            <!-- This JAR includes neither a POM nor a relevant Manifest.MF. Besides, you have to download it manually -->
+            <include name="ftp4j-1.7.2.jar"/>
+            <!-- May have summed up as:
+            <include name="**/*.jar"/>
+            -->
+        </fileset>
+    </path>
+    <!-- Target to clean build folders-->
+    <target name="clean" description="Cleans folders">
+        <delete dir="${classesdir}"/>
+        <delete dir="${defaulttargetdir}"/>
+    </target>
+    <!-- Target to compile the sources-->
+    <target name="compile" description="Compiles the code"
+            depends="clean">
+        <mkdir dir="${classesdir}"/>
+        <javac destdir="${classesdir}" srcdir="${src}"
+               classpathref="build.classpath"/>
+    </target>
+    <!-- Target to compress the *.class files as a JAR archive -->
+    <target name="generateJar" description="Create the jar"
+            depends="compile">
+        <jar jarfile="${defaulttargetdir}/${final.name}.jar"
+             basedir="${classesdir}"/>
+    </target>
+
+    <!-- Target to compile the test sources -->
+    <target name="compile-tests" depends="compile">
+        <delete dir="${testclassesdir}"/>
+        <mkdir dir="${testclassesdir}"/>
+        <javac destdir="${testclassesdir}">
+            <!-- Folder for unit tests sources-->
+            <src>
+                <pathelement location="${test}"/>
+            </src>
+            <classpath>
+                <path refid="build.classpath"/>
+                <pathelement path="${classesdir}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Runs the unit tests-->
+    <target name="run-unit-test" depends="compile-tests"
+            description="runs the unit tests">
+        <junit dir="./" failureproperty="test.failure">
+            <classpath>
+                <path refid="build.classpath"/>
+                <pathelement path="${testclassesdir}"/>
+                <pathelement path="${classesdir}"/>
+                <!-- JUnit archive is added a dependency for tests ; you can consider it as an equivalent to <scope>test</scope> -->
+                <fileset dir="lib">
+                    <include name="junit-4.11.jar"/>
+                </fileset>
+            </classpath>
+        </junit>
+    </target>
+</project>

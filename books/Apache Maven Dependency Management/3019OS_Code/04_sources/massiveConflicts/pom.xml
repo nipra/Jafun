@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>
+        com.packt.maven.dependency.massiveConflicts
+    </groupId>
+    <artifactId>massiveConflicts</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Example of
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' in order to fix them
+        * use of plugin 'dependency' to analyse these
+        dependencies
+    </name>
+
+    <dependencies>
+        <dependency>
+            <!-- declared and unused -->
+            <groupId>directory</groupId>
+            <artifactId>apacheds-core</artifactId>
+            <version>0.9.3</version>
+            <!--implicit dependency to commons-io:commons-io:1.0-->
+        </dependency>
+        <dependency>
+            <!-- declared and used -->
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-exec</artifactId>
+            <version>2.9.7</version>
+            <!--implicit dependency to commons-io:commons-io:1.4-->
+        </dependency>
+        <dependency>
+            <!-- declared and unused -->
+            <groupId>org.apache.tapestry</groupId>
+            <artifactId>tapestry-upload</artifactId>
+            <version>5.3.7</version>
+            <!--implicit dependency to commons-io:commons-io:2.0.1-->
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.grep4j</groupId>
+            <artifactId>grep4j</artifactId>
+            <version>1.7.5</version>
+            <!--implicit dependency to commons-io:commons-io:2.4-->
+        </dependency>
+
+        <!--
+                <dependency>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                    <version>2.3</version>
+                </dependency>
+        -->
+        <!--
+        Original dependency:tree:
+
+        -->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin
+                </artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <rules>
+                        <!--<banDuplicateClasses>-->
+                        <!--<findAllDuplicates>true</findAllDuplicates>-->
+                        <!--<ignoreClasses>-->
+                        <!--&lt;!&ndash; See: http://jira.codehaus.org/browse/XSTR-689 &ndash;&gt;-->
+                        <!--&lt;!&ndash; Found in both: xmlpull:xmlpull:jar:1.1.3.1 xpp3:xpp3_min:jar:1.1.4c &ndash;&gt;-->
+                        <!--&lt;!&ndash; Dependencies of com.thoughtworks.xstream:xstream:1.4.3 &ndash;&gt;-->
+                        <!--<ignoreClass>org.xmlpull.v1.XmlPullParser</ignoreClass>-->
+                        <!--<ignoreClass>org.xmlpull.v1.XmlPullParserException</ignoreClass>-->
+                        <!--</ignoreClasses>-->
+                        <!--</banDuplicateClasses>-->
+                        <!--********* this is good **** <dependencyConvergence/>-->
+                        <!--  <requireMavenVersion>
+                              <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
+                              <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums
+                                  respectively.
+                              </message>
+                          </requireMavenVersion>-->
+                        <bannedDependencies>
+                            <excludes>
+                                <!--<exclude>commons-io-->
+                                <!--</exclude>-->
+                            </excludes>
+                            <includes>
+                                <!--only 1.0 of badArtifact is allowed-->
+                                <!--<include>commons-io:commons-io:2.0.1</include>-->
+                            </includes>
+                        </bannedDependencies>
+                    </rules>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>extra-enforcer-rules
+                        </artifactId>
+                        <version>1.0-alpha-3</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-enforcer-plugin</artifactId>
+                            <version>1.0</version>
+                            <executions>
+                                <execution>
+                                    <id>enforce-banned-dependencies</id>
+                                    <goals>
+                                        <goal>enforce</goal>
+                                    </goals>
+                                    <configuration>
+                                        <rules>
+                                            <AlwaysPass/>
+                                            &lt;!&ndash;<rule>&ndash;&gt;
+                                            &lt;!&ndash;<banDuplicateClasses>&ndash;&gt;
+                                            &lt;!&ndash;<findAllDuplicates>true</findAllDuplicates>&ndash;&gt;
+                                            &lt;!&ndash;</banDuplicateClasses>&ndash;&gt;
+                                            &lt;!&ndash; <bannedDependencies>
+                                                 <searchTransitive>true</searchTransitive>
+                                                 <excludes>
+                                                     <exclude>commons-io</exclude>
+                                                 </excludes>
+                                                 &lt;!&ndash;<includes>
+                                                     <include>commons-io:commons-io:2.0.1</include>
+                                                 </includes>&ndash;&gt;
+                                             </bannedDependencies>&ndash;&gt;
+                                            &lt;!&ndash;</rule>&ndash;&gt;
+
+                                        </rules>
+                                        <fail>true</fail>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>extra-enforcer-rules</artifactId>
+                                    <version>1.0-alpha-5</version>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+            -->
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>
+                    maven-dependency-plugin
+                </artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

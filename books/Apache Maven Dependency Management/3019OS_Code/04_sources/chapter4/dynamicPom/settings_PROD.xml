@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <profiles>
+        <profile>
+            <id>PROD</id>
+            <properties>
+                <environment>PROD</environment>
+                <effective.groupId>
+                    postgresql
+                </effective.groupId>
+                <effective.artifactId>
+                    postgresql
+                </effective.artifactId>
+                <effective.version>
+                    9.1-901.jdbc4
+                </effective.version>
+                <jdk.version>jdk6</jdk.version>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+</settings>

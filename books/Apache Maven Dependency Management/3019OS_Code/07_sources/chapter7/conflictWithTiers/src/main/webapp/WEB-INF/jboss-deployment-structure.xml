@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure
+        xmlns="urn:jboss:deployment-structure:1.2"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:jboss:deployment-structure:1.2 http://www.jboss.org/schema/jbossas/jboss-deployment-structure-1_2.xsd">
+    <deployment>
+        <exclusions>
+            <!-- Reference to JBOSS_HOME/modules/org/jboss/as/jaxr/main -->
+            <module name="org.jboss.as.jaxr"/>
+            <!--You have to add as many blocks as modules with conflicts-->
+            <module name="org.apache.velocity"/>
+            <module name="org.apache.cxf"/>
+            <module name="org.apache.juddi.scout"/>
+            <!-- module etc.-->
+        </exclusions>
+        <dependencies>
+            <!-- This is the name of dependency exported by the module of name javaee.api, in the module.xml file -->
+            <module name="org.apache.commons.lang"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

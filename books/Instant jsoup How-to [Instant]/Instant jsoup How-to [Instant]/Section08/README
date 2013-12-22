@@ -1,0 +1,13 @@
+[README]
+Author: Pete Houston
+Publisher: Packt 
+
+Project: Section08
+Description:
+- The sample source code for Section 08 in the book.
+
+Note: project was created by Maven 
+create:  $ mvn archetype:generate -DgroupId=com.petehouston.jsoup -DartifactId=Section08 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+build:   $ mvn clean compile assembly:single
+execute: $ java -cp target/Section08-1.0-SNAPSHOT-jar-with-dependencies.jar com.petehouston.jsoup.App
+

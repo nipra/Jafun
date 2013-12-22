@@ -1,0 +1,28 @@
+[FINER] - Sat Jun 30 17:44:22 CEST 2012 : Core.main() : ENTRY
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Launching thread: 0
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread created: Thread-1
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Launching thread: 1
+[FINER] - Sat Jun 30 17:44:22 CEST 2012 : Thread-1.run() : ENTRY
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread created: Thread-2
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Launching thread: 2
+[FINER] - Sat Jun 30 17:44:22 CEST 2012 : Thread-2.run() : ENTRY
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread created: Thread-3
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Launching thread: 3
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread created: Thread-4
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Launching thread: 4
+[FINER] - Sat Jun 30 17:44:22 CEST 2012 : Thread-4.run() : ENTRY
+[FINER] - Sat Jun 30 17:44:22 CEST 2012 : Thread-3.run() : ENTRY
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread created: Thread-5
+[INFO] - Sat Jun 30 17:44:22 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Ten Threads created. Waiting for its finalization
+[FINER] - Sat Jun 30 17:44:22 CEST 2012 : Thread-5.run() : ENTRY
+[FINER] - Sat Jun 30 17:44:24 CEST 2012 : Thread-1.run() : RETURN {0}
+[INFO] - Sat Jun 30 17:44:24 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread has finished its execution
+[FINER] - Sat Jun 30 17:44:24 CEST 2012 : Thread-2.run() : RETURN {0}
+[INFO] - Sat Jun 30 17:44:24 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread has finished its execution
+[FINER] - Sat Jun 30 17:44:24 CEST 2012 : Thread-4.run() : RETURN {0}
+[FINER] - Sat Jun 30 17:44:24 CEST 2012 : Thread-3.run() : RETURN {0}
+[INFO] - Sat Jun 30 17:44:24 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread has finished its execution
+[FINER] - Sat Jun 30 17:44:24 CEST 2012 : Thread-5.run() : RETURN {0}
+[INFO] - Sat Jun 30 17:44:24 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread has finished its execution
+[INFO] - Sat Jun 30 17:44:24 CEST 2012 : com.packtpub.java7.concurrency.chapter8.recipe07.core.Core.main : Thread has finished its execution
+[FINER] - Sat Jun 30 17:44:24 CEST 2012 : Core.main() : RETURN

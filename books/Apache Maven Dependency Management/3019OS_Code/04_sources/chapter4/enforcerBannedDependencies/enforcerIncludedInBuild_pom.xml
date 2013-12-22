@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.packt.dependencyManagement.chapter4
+        </groupId>
+        <artifactId>head</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>enforcerUseCase</artifactId>
+    <version>${project.parent.version}</version>
+    <name>Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal TODO in order
+        to detect them
+    </name>
+
+    <dependencies>
+        <dependency>
+            <!-- declared and unused -->
+            <groupId>directory</groupId>
+            <artifactId>apacheds-core</artifactId>
+            <version>0.9.3</version>
+            <!--implicit dependency to commons-io:commons-io:1.0-->
+        </dependency>
+        <dependency>
+            <!-- declared and used -->
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-exec</artifactId>
+            <version>2.9.7</version>
+            <!--implicit dependency to commons-io:commons-io:1.4-->
+        </dependency>
+        <dependency>
+            <!-- declared and unused -->
+            <groupId>org.apache.tapestry</groupId>
+            <artifactId>tapestry-upload</artifactId>
+            <version>5.3.7</version>
+            <!--implicit dependency to commons-io:commons-io:2.0.1-->
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.grep4j</groupId>
+            <artifactId>grep4j</artifactId>
+            <version>1.7.5</version>
+            <!--implicit dependency to commons-io:commons-io:2.4-->
+        </dependency>
+
+        <!--
+                <dependency>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                    <version>2.3</version>
+                </dependency>
+        -->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin
+                </artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <rules>
+                        <dependencyConvergence/>
+                    </rules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

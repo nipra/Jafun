@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <!--Spring configuration for DEV environment: a HSQLDB in memory-->
+    <bean id="dataSource" destroy-method="close"
+          class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName"
+                  value="org.hsqldb.jdbcDriver"/>
+        <property name="url"
+                  value="jdbc:hsqldb:mem:schema"/>
+        <property name="username" value="username"/>
+        <property name="password" value="password"/>
+    </bean>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.packt.dependencyManagement.chapter3
+    </groupId>
+    <artifactId>head</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>Head POM for chapter 3 code samples</name>
+    <modules>
+        <module>scopeCompile</module>
+        <module>scopeProvided</module>
+        <module>scopeTest</module>
+        <module>scopeRuntime</module>
+        <module>scopeSystem</module>
+        <module>ScopeImport</module>
+        <module>WithDependencyManagement</module>
+        <module>reactorSorting</module>
+        <!--Not included in  build-->
+        <!--<module>unresolvableArtifact</module>-->
+    </modules>
+</project>

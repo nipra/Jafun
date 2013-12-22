@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <title>jsoup Java HTML Parser, with best of DOM, CSS, and jquery</title> 
+  <meta name="keywords" content="jsoup, java html parser, home" /> 
+  <meta name="description" content="Open source Java HTML parser, with DOM, CSS, and jquery-like methods for easy data extraction." /> 
+  <link type="text/css" rel="stylesheet" href="/rez/style.css" />  
+  <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-89734-10']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script> 
+ </head> 
+ <body class="n1-home"> 
+  <div class="wrap"> 
+   <div class="header"> 
+    <div class="nav-sections"> 
+     <ul> 
+      <li class="n1-home"><h4><a href="/">jsoup</a></h4></li> 
+      <li class="n1-news"><a href="/news/">News</a></li> 
+      <li class="n1-bugs"><a href="/bugs">Bugs</a></li> 
+      <li class="n1-discussion"><a href="/discussion">Discussion</a></li> 
+      <li class="n1-download"><a href="/download">Download</a></li> 
+      <li class="n1-api"><a href="/apidocs/">API Reference</a></li> 
+      <li class="n1-cookbook"><a href="/cookbook/">Cookbook</a></li> 
+      <li class="n1-try"><a href="" ews="" http:="" try.jsoup.org="">Try</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="breadcrumb"> 
+    <a href="/">jsoup</a> 
+    <span class="seperator">&raquo;</span> jsoup: Java HTML Parser 
+   </div> 
+   <div class="content"> 
+    <div class="col1"> 
+     <h1>jsoup: Java HTML Parser</h1> 
+     <p><code>jsoup</code> is a Java library for working with real-world HTML. It provides a very convenient API for extracting and manipulating data, using the best of DOM, CSS, and jquery-like methods.</p> 
+     <p><a href="http://whatwg.org/html" class="badge badge-html5"></a></p> 
+     <p><code>jsoup</code> implements the <a href="http://whatwg.org/html">WHATWG HTML5</a> specification, and parses HTML to the same DOM as modern browsers do.</p> 
+     <ul> 
+      <li>scrape and <a href="/cookbook/input/parse-document-from-string">parse</a> HTML from a URL, file, or string</li> 
+      <li><a href="/cookbook/extracting-data/selector-syntax">find</a> and extract data, using DOM traversal or CSS selectors</li> 
+      <li><a href="/cookbook/modifying-data/set-html">manipulate</a> the HTML elements, attributes, and text</li> 
+      <li><a href="/cookbook/cleaning-html/whitelist-sanitizer">clean</a> user-submitted content against a safe white-list, to prevent <abbr title="Cross Site Scripting">XSS</abbr> attacks</li> 
+      <li><a href="/apidocs/org/jsoup/select/Elements.html#html()">output</a> tidy HTML</li> 
+     </ul> 
+     <p>jsoup is designed to deal with all varieties of HTML found in the wild; from pristine and validating, to invalid tag-soup; jsoup will create a sensible parse tree.</p> 
+     <h2>Example</h2> 
+     <p>Fetch the <a href="http://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> homepage, parse it to a DOM, and select the headlines from the <i>In&nbsp;the&nbsp;news</i> section into a list of <a href="/apidocs/index.html?org/jsoup/select/Elements.html">Elements</a>:</p> 
+     <pre><code class="prettyprint">Document doc = Jsoup.connect(&quot;http://en.wikipedia.org/&quot;).get();
+Elements newsHeadlines = doc.select(&quot;#mp-itn b a&quot;);
+</code></pre> 
+     <p><a href="http://www.opensource.org/" class="badge badge-os"></a></p> 
+     <h2>Open source</h2> 
+     <p>jsoup is an open source project distributed under the liberal <a href="license">MIT license</a>. The source code is available at <a href="http://github.com/jhy/jsoup/">GitHub</a>.</p> 
+     <h2>Getting started</h2> 
+     <ol> 
+      <li><a href="download"><b>Download</b></a> the jsoup jar (version <a href="/news/release-1.7.2">1.7.2</a>)</li> 
+      <li>Read the cookbook <a href="/cookbook/introduction/">introduction</a></li> 
+      <li>Enjoy!</li> 
+     </ol> 
+     <h2>Development and support</h2> 
+     <p>If you have any questions on how to use jsoup, or have ideas for future development, please get in touch via the <a href="discussion">mailing list</a>.</p> 
+     <p>If you find any issues, please <a href="bugs">file a bug</a> after checking for duplicates.</p> 
+     <h2>Status</h2> 
+     <p>jsoup is in general release.</p> 
+    </div>
+    <!-- /col1 --> 
+    <div class="col2"> 
+     <div class="toc box"> 
+      <h2><a href="/cookbook"></a>Cookbook contents</h2> 
+      <h3>Introduction</h3> 
+      <ol start="1"> 
+       <li><a href="/cookbook/introduction/parsing-a-document">Parsing and traversing a Document</a></li> 
+      </ol> 
+      <h3>Input</h3> 
+      <ol start="2"> 
+       <li><a href="/cookbook/input/parse-document-from-string">Parse a document from a String</a></li> 
+       <li><a href="/cookbook/input/parse-body-fragment">Parsing a body fragment</a></li> 
+       <li><a href="/cookbook/input/load-document-from-url">Load a Document from a URL</a></li> 
+       <li><a href="/cookbook/input/load-document-from-file">Load a Document from a File</a></li> 
+      </ol> 
+      <h3>Extracting data</h3> 
+      <ol start="6"> 
+       <li><a href="/cookbook/extracting-data/dom-navigation">Use DOM methods to navigate a document</a></li> 
+       <li><a href="/cookbook/extracting-data/selector-syntax">Use selector-syntax to find elements</a></li> 
+       <li><a href="/cookbook/extracting-data/attributes-text-html">Extract attributes, text, and HTML from elements</a></li> 
+       <li><a href="/cookbook/extracting-data/working-with-urls">Working with URLs</a></li> 
+       <li><a href="/cookbook/extracting-data/example-list-links">Example program: list links</a></li> 
+      </ol> 
+      <h3>Modifying data</h3> 
+      <ol start="11"> 
+       <li><a href="/cookbook/modifying-data/set-attributes">Set attribute values</a></li> 
+       <li><a href="/cookbook/modifying-data/set-html">Set the HTML of an element</a></li> 
+       <li><a href="/cookbook/modifying-data/set-text">Setting the text content of elements</a></li> 
+      </ol> 
+      <h3>Cleaning HTML</h3> 
+      <ol start="14"> 
+       <li><a href="/cookbook/cleaning-html/whitelist-sanitizer">Sanitize untrusted HTML (to prevent XSS)</a></li> 
+      </ol> 
+     </div> 
+    </div>
+    <!-- /col2 --> 
+   </div>
+   <!-- /content--> 
+   <div class="footer"> 
+    <b>jsoup</b> HTML parser: copyright &copy; 2009 - 2013 
+    <a href="http://jonathanhedley.com/" rel="me"><b>Jonathan Hedley</b></a> 
+   </div> 
+  </div>
+  <!-- /wrap --> 
+  <script src="/rez/prettify.js"></script>
+  <script>prettyPrint();</script> 
+ </body>
+</html>

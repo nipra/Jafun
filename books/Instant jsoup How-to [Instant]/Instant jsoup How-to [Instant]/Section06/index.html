@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Section 05: Clean dirty HTML</title>
+  <meta http-equiv="refresh" content="0;url=javascript:alert('xss01');">
+  <meta charset="utf-8" />
+</head>
+
+<body onload=alert('XSS02')>
+  <h1>jSoup: the HTML parser</h1>
+  <script src=http://ha.ckers.org/xss.js></script>
+  <img """><script>alert("XSS03")</script>">
+  <img src=# onmouseover="alert('xxs04')">      
+  <script/XSS src="http://ha.ckers.org/xss.js"></script>
+  <script/src="http://ha.ckers.org/xss.js"></script>
+  <iframe src="javascript:alert('XSS05');"></iframe>
+  <img src="http://www.w3.org/html/logo/img/mark-only-icon.png" />
+  <img src="www.w3.org/html/logo/img/mark-only-icon.png" />
+
+</body>
+</html>

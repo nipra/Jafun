@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Dossier VIEW</title>
+</h:head>
+<f:view>
+	<h:form id="formPrincipal">
+		<h:body>
+			<rich:tabPanel switchType="ajax">
+
+				<rich:tab header="Synthese">
+
+					<h:commandButton value="Agence" action="SOAgence" />
+					<br />
+					<br />
+					<h:commandButton value="Antenne" action="SOAntenne" />
+					<br />
+					<br />
+					<h:commandButton value="Suivi" action="SOSuivi" />
+					<br />
+					<br />
+					<h:commandButton value="Horaire" action="SOHoraire" />
+					<br />
+					<br />
+					<ui:insert name="content" />
+				</rich:tab>
+
+
+				<rich:tab header="Procedure">
+					<ui:include src="procedureView.xhtml" />
+				</rich:tab>
+
+			</rich:tabPanel>
+		</h:body>
+	</h:form>
+</f:view>
+</html>

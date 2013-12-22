@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.packt.dependencyManagement.chapter4
+        </groupId>
+        <artifactId>head</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>enforcerDependencyConvergence</artifactId>
+    <version>${project.parent.version}</version>
+    <name>Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal 'enforce' in
+        order to detect them, thanks to rule
+        'dependencyConvergence'
+    </name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.pluto</groupId>
+            <artifactId>pluto-portal-driver</artifactId>
+            <version>1.1.7</version>
+            <!--implicit dependency to 'taglibs:standard:1.0.6' -->
+        </dependency>
+        <dependency>
+            <groupId>org.grails</groupId>
+            <artifactId>grails-web</artifactId>
+            <version>2.2.3</version>
+            <!-- implicit dependency to 'taglibs:standard:1.1.2'-->
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>
+                    maven-enforcer-plugin
+                </artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <rules>
+                        <!-- We will apply the rule of dependency convergence: this rule makes the build fail if two dependencies (either direct or transitive) diverge on the version -->
+                        <dependencyConvergence/>
+                    </rules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!--We run the goal 'enforce'-->
+                            <goal>enforce</goal>
+                        </goals>
+                        <!-- The goal is called on phase 'verify'-->
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
+        <!--This block may be needed in some configurations ; it should be added before the <plugin> tag -->
+        <!--
+                <dependencies>
+                <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>
+                extra-enforcer-rules
+                </artifactId>
+                <version>1.0-alpha-3</version>
+                </dependency>
+                </dependencies>
+        -->

@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.packt.dependencyManagement.chapter2
+        </groupId>
+        <artifactId>head</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>exclusions</artifactId>
+    <version>${pom.parent.version}</version>
+    <name>Example of POM with exclusions</name>
+
+    <properties>
+        <!--the target versions needed in our project -->
+        <commons-collections.version>3.2
+        </commons-collections.version>
+        <dbunit.version>2.3.0</dbunit.version>
+        <junit.version>4.11</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>${dbunit.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <!--Exclude transitive dependency to JUnit-3.8.2 -->
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>junit</groupId>
+                </exclusion>
+                <!--Exclude transitive dependency to Commons-Collections-3.1-->
+                <exclusion>
+                    <artifactId>commons-collections
+                    </artifactId>
+                    <groupId>commons-collections</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons-collections.version}
+            </version>
+            <exclusions>
+                <!--Exclude transitive dependency to JUnit-3.8.1 -->
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>junit</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>

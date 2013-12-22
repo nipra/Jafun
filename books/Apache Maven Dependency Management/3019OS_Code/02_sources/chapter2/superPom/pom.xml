@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- Either in a parent POM or in a independent POM, the triplet groupId/artifactId/version remain the unique way to identify a project-->
+    <groupId>
+        com.packt.dependencyManagement.chapter2
+    </groupId>
+    <artifactId>superPom</artifactId>
+    <version>1.0</version>
+
+    <!-- The full name of the project-->
+    <name>Example of super POM: rationalizes properties,
+        versions, plugins, etc.
+    </name>
+    <!-- The version of the parent POM ; notice it can or cannot be the same as the sons’ versions -->
+    <packaging>pom</packaging>
+
+    <!-- These properties are common to all son POMs-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8
+        </project.build.sourceEncoding>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <gwt.version>2.0.3</gwt.version>
+        <!-- etc. -->
+        <dbunit.version>2.4.8</dbunit.version>
+        <!-- sonar config -->
+        <sonar.jdbc.url>
+            jdbc:mysql://localhost:3306/sonar?useUnicode=true
+        </sonar.jdbc.url>
+        <sonar.jdbc.driver>com.mysql.jdbc.Driver
+        </sonar.jdbc.driver>
+        <!-- etc. -->
+    </properties>
+
+    <!-- The Source Code Management -->
+    <scm>
+        <connection>
+            scm:svn:http://localhost:8066/packt/branches/1.0
+        </connection>
+        <!-- etc. -->
+    </scm>
+
+    <!-- The distribution management -->
+    <distributionManagement>
+        <repository>
+            <id>repoDistrib</id>
+            <name>repoDistrib</name>
+            <!-- Here we use a local repository -->
+            <url>file:///C:/artifacts</url>
+        </repository>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>2.0</version>
+            </plugin>
+            <!-- etc. -->
+        </plugins>
+    </build>
+</project>

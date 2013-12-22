@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.packt.dependencyManagement.chapter4
+        </groupId>
+        <artifactId>head</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>enforcerBannedDependencies</artifactId>
+    <version>${project.parent.version}</version>
+    <name>Example
+        * POM with many conflicts because of JAR versions
+        * use of plugin 'enforcer' with goal 'enforce' and
+        rule 'bannedDependency'
+    </name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.pluto</groupId>
+            <artifactId>pluto-portal-driver</artifactId>
+            <version>1.1.7</version>
+
+            <!--implicit dependency to 'taglibs:standard:1.0.6'
+            javax.servlet:jstl:1.0.6
+            commons-io:commons-io:1.3.1
+            -->
+
+<!--In order to fix the build, you have to uncomment the block <exclusions> below-->
+<!--
+<exclusions>
+    <exclusion>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+    </exclusion>
+    <exclusion>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+    </exclusion>
+</exclusions>
+-->
+        </dependency>
+        <dependency>
+            <groupId>org.grails</groupId>
+            <artifactId>grails-web</artifactId>
+            <version>2.2.3</version>
+            <!-- implicit dependency to 'taglibs:standard:1.1.2'
+            javax.servlet:jstl:1.1.2
+            commons-io:commons-io:2.1
+            -->
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>
+                    maven-enforcer-plugin
+                </artifactId>
+                <version>1.2</version>
+                <configuration>
+<rules>
+    <bannedDependencies>
+        <excludes>
+            <!-- All versions of commons-io are banned-->
+            <exclude>commons-io:commons-io</exclude>
+    <!-- Ban only version 1.0.6 of JSTL. The brackets *are*
+    needed ; otherwise, Maven would ban versions
+    "1.0.6 and above" -->
+            <exclude>javax.servlet:jstl:[1.0.6]</exclude>
+        </excludes>
+        <includes>
+            <!--Version 2.0.1 of commons-io
+            is explicitely excluded from ban-->
+            <include>commons-io:commons-io:2.0.1</include>
+<!--no use to add explicitely the allowed version of JSTL-->
+        </includes>
+    </bannedDependencies>
+</rules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!--We run the goal 'enforce'-->
+                            <goal>enforce</goal>
+                        </goals>
+                        <!-- The goal is called on phase 'verify'-->
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
+        <!--This block may be needed in some configurations ; it should be added before the <plugin> tag -->
+        <!--
+                <dependencies>
+                <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>
+                extra-enforcer-rules
+                </artifactId>
+                <version>1.0-alpha-3</version>
+                </dependency>
+                </dependencies>
+        -->

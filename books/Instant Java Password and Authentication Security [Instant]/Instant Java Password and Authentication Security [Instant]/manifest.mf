@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Name: com/packtpub/hashinghowto/
+
+Specification-Title: "Hashing examples for Instant Java Password and Authentication Security" 
+Specification-Vendor: "Packt Publishing".
+Implementation-Title: "com.packtpub.hashinghowto" 
+Implementation-Vendor: "Packt Publishing"
+
+Main-Class: Main

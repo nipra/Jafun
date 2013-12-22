@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>
+        com.packt.dependencyManagement.chapter4
+    </groupId>
+    <artifactId>dynamicPom</artifactId>
+    <version>1.0</version>
+    <properties>
+        <spring.version>3.2.3.RELEASE</spring.version>
+        <jedi.version>3.0.5</jedi.version>
+    </properties>
+    <name>Example of dynamic POM: Maven will preprocess the
+        pom.xml, in order to get an effective POM, before
+        running it
+    </name>
+    <profiles>
+        <profile>
+            <!-- The profile PROD gathers the properties related to the environment PROD-->
+            <id>PROD</id>
+            <properties>
+                <environment>PROD</environment>
+                <effective.groupId>
+                    postgresql
+                </effective.groupId>
+                <effective.artifactId>
+                    postgresql
+                </effective.artifactId>
+                <effective.version>
+                    9.1-901.jdbc4
+                </effective.version>
+                <jdk.version>jdk6</jdk.version>
+            </properties>
+            <activation>
+                <!-- This profile is activated by default: in other terms, if no other profile in activated, then PROD will be-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>UAT</id>
+            <properties>
+                <environment>UAT</environment>
+                <effective.groupId>
+                    mysql
+                </effective.groupId>
+                <effective.artifactId>
+                    mysql-connector-java
+                </effective.artifactId>
+                <effective.version>
+                    5.1.25
+                </effective.version>
+                <jdk.version>jdk6</jdk.version>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!-- The profile DEV gathers the properties related to the environment DEV-->
+            <id>DEV</id>
+            <properties>
+                <environment>DEV</environment>
+                <effective.groupId>
+                    org.hsqldb
+                </effective.groupId>
+                <effective.artifactId>
+                    hsqldb
+                </effective.artifactId>
+                <effective.version>
+                    2.3.0
+                </effective.version>
+                <jdk.version>jdk5</jdk.version>
+            </properties>
+            <activation>
+                <!-- The profile DEV will be activated if, and only if, it is explicitely called-->
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resource</directory>
+                <!--include the XML files corresponding to the environment: PROD, UAT, DEV. Here, the only XML file is a Spring configuration one. There is one file per environment-->
+                <includes>
+                    <include>**/*-${environment}.xml
+                    </include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jedi</groupId>
+            <!--For this dependency two artifacts are available, one for jdk5 or and a second for jdk6-->
+            <artifactId>jedi-${jdk.version}</artifactId>
+            <version>${jedi.version}</version>
+        </dependency>
+
+        <!-- The dependency to effective JDBC drivers: PostGre, MySQL or HSQLDB-->
+        <dependency>
+            <groupId>${effective.groupId}</groupId>
+            <artifactId>
+                ${effective.artifactId}
+            </artifactId>
+            <version>${effective.version}</version>
+        </dependency>
+
+    </dependencies>
+</project>

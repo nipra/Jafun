@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.packt.dependencyManagement.chapter2
+    </groupId>
+    <artifactId>head</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>Head POM for chapter 2 code samples</name>
+    <modules>
+        <module>exclusions</module>
+        <module>longDesignation</module>
+        <module>longDesignationWithProperties</module>
+        <module>superPom</module>
+        <module>OptionalTag/Back</module>
+        <module>OptionalTag/Middle</module>
+        <module>OptionalTag/Front</module>
+        <!-- We do not includce the two last submodules because they cannot compile as are (missing several subfolders)-->
+        <!--<module>multimodulesSimple</module>-->
+        <!--<module>multimodulesWithProfiles</module>-->
+    </modules>
+</project>

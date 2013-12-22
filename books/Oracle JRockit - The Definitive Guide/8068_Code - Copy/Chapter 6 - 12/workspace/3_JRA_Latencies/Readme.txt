@@ -1,0 +1,1 @@
+See the readme for JFR latencies. Same applies, but no custom events.

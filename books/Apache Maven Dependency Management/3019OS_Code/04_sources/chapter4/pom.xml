@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.packt.dependencyManagement.chapter4
+    </groupId>
+    <artifactId>head</artifactId>
+    <name>Head POM for chapter 4 examples</name>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>enforcerDependencyConvergence</module>
+        <module>enforcerBannedDependencies</module>
+        <module>enforcerMultiRules</module>
+        <module>tattletateExample</module>
+        <module>exampleWithSealedArchive</module>
+        <module>exampleWithType</module>
+        <module>specificArchiveExample</module>
+        <module>massiveConflicts</module>
+        <module>simplestPom</module>
+        <module>dynamicPom</module>
+    </modules>
+</project>
